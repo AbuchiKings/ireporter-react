@@ -10,17 +10,15 @@ function SignUp() {
     }
     const [inProp, setInProp] = useState(true);
     return (
-        <div className="login-center lgcc">
-            <button
-                onClick={() => setInProp(!inProp)}
-                size="lg"
-            >Show</button>
+        <div className="login-center">
 
             <form className="login-form" onSubmit={handleSubmit}>
                 <div className="input-grp">
-                    <input type="text" placeholder="Name"
-                        aria-label="name"
+                    <input type="text"
+                        aria-label="name" name="name" id="name"
+                        required
                     />
+                    <label htmlFor="name">Name</label>
                 </div>
                 <div className="input-grp">
                     <input type="email" placeholder="Email"
@@ -37,14 +35,12 @@ function SignUp() {
                         aria-label="Password" autoComplete="password"
                     />
                 </div>
-                <CSSTransition in={inProp} classNames="fade" timeout={300}>
 
-                    <div className="input-grp">
-                    {inProp &&  <button className="btn-primary login-btn">
-                            Sign Up
-                        </button>}
-                    </div>
-                </CSSTransition>
+                <div className="input-grp">
+                    <button className="btn-primary login-btn">
+                        Sign Up
+                        </button>
+                </div>
 
             </form>
 

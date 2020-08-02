@@ -13,11 +13,14 @@ function AuthPage(props) {
     const words = ["Together we can make the world a better place.",
         "We pride ourselves in the number of resolved incidents, but we aim for even better results.",
         "Let us tell the stories that matter.", 
-        "The future is now."
+        "Even you can help make the world a better place."
     ];
     const wait = 5000;
+    const divStyles = typingRef.current ? window.getComputedStyle(typingRef): false;
+    const divDisplay = divStyles && divStyles.getPropertyValue('display');
 
     useEffect(() => {
+        console.log(window.innerWidth)
         new Typewriter(typingRef.current, words, wait).type();
         return () => {
             console.log('Out of here')

@@ -1,5 +1,5 @@
 class Typewriter {
-    constructor(txtElement, words, wait = 3000) {
+    constructor(txtElement, words, wait = 30000) {
         this.txtElement = txtElement;
         this.txt = '';
         this.words = words;
@@ -9,7 +9,8 @@ class Typewriter {
 
     }
     type = () => {
-        if (window.getComputedStyle(this.txtElement).getPropertyValue('display') !== 'none') {
+        let typespeed = 100;
+        if (window.innerWidth > 980) {
             const current = this.wordIndex % this.words.length;
             const fulltext = this.words[current];
 
@@ -19,7 +20,6 @@ class Typewriter {
                 this.txt = fulltext.substring(0, this.txt.length + 1);
             }
             this.txtElement.textContent = this.txt;
-            let typespeed = 100;
             if (this.isDeleting) {
                 typespeed /= 2
             }
@@ -31,9 +31,9 @@ class Typewriter {
                 this.wordIndex++
                 typespeed = 500
             }
-            setTimeout(() => this.type(), typespeed);
+        } else { }
+        setTimeout(() => this.type(), typespeed);
 
-        }
     }
 }
 
