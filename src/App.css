@@ -1,38 +1,307 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainWhite: #F2EEF7;
+  --serenity: #A3A3B7;
+  --mainBlack: #222;
+  --roseRed: #FF5745;
+  --hover: rgb(245, 9, 80);
+  --charcoal: #1B4A56;
+  --mainTransition: all 0.4s linear;
+  --fastTransition: all 0.2s linear;
+  --mainSpacing: 3px;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.2);
+  --darkShadow: 4px 20px 10px 0px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+}
+
+/* globals**/
+
+body {
+  color: var(--mainBlack);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.4;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+  background: var(--roseRed);
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--roseRed);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+}
+
+
+/*Title*/
+
+.section-title {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-title h4 {
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 0.7em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section-title div {
+  width: 5em;
+  height: 5px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
+/* End of Title */
+
+
+/*AuthPage**/
+
+.main {
+  margin: auto 0;
+  background: url(./images/bgc3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  color: var(--mainBlack);
+  position: relative;
+}
+
+.typing-div{
+  color: white;
+  position: absolute;
+  left: 60%;
+  right: 7%;
+  top: 50%;
+  margin-top: -5%;
+  max-width: 450px;
+  min-width: 250px;
+  text-align: center;
+}
+.typing-div span {
+  text-align: center;
+  padding-right: 0.1em;
+  border-right: 2px solid var(--mainWhite);
+}
+
+div.form-wrapper {
+  min-height: 100vh;
+  min-width: 280px;
+  max-width: 450px;
+  background-color: #fff;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: 6em;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  position: relative;
+}
+
+div.form-section>h1, div.form-section>p {
+  text-align: center;
+}
+
+div.form-wrapper a {
+  text-decoration: none;
+  color: rgb(55, 142, 240);
+}
+
+div.form-section>p a:hover {
+  text-decoration: underline;
+}
+
+div.form-section>h1 {
+  margin-top: 1.5em;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+}
+
+.form-footer {
+  bottom: 20px;
+  text-align: center;
+  padding-top: 10px;
+  color: rgb(49, 49, 49);
+  bottom: 0px;
+  width: 95%;
+}
+
+.form-footer p {
+  text-align: center;
+}
+
+.form-footer p>span {
+  display: inline-block;
+  padding: 0px 5px;
+}
+
+small.copyright {
+  display: block;
+  margin-top: 0.8em;
+  font-size: 0.85em;
+  text-align: center;
+  padding-bottom: 0.7em;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+small a {
+  color: var(--charcoal);
+}
+
+small a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 768px) {
+  div.form-wrapper {
+    margin: 0 auto;
+  }
+}
+@media(max-width: 980px) {
+  .typing-div, .typing-div span{
+    display: none;
+  }
+}
+
+/*AuthPage Login**/
+
+div.login-center {
+  margin-top: 3em;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.input-grp+.input-grp {
+  margin-top: 25px;
+}
+
+.input-grp input {
+  height: 3em;
+  width: 90%;
+  min-width: 250px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid rgb( 234, 234, 234);
+  transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -webkit-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -moz-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -ms-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -o-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+}
+
+.input-grp input:hover {
+  border-bottom-color: rgb(200, 200, 200);
+}
+
+.input-grp input:focus {
+  outline: none;
+  box-shadow: rgb(55, 142, 240) 0px 1px 0px;
+  border-color: rgb(55, 142, 240);
+}
+
+.login-btn {
   color: white;
+  height: 3em;
+  width: 90%;
+  min-width: 250px;
+  border-width: 1px;
 }
 
-.App-link {
-  color: #61dafb;
+.login-btn:hover {
+  color: var(--mainBlack);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*--------------------------*/
+.fade-enter {
+  opacity: 0.01;
+  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-transform: scale(0.1);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-transform: scale(0.1);
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transform: scale(1);
+  transition: all 300ms;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
 }
