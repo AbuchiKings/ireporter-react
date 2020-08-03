@@ -15,9 +15,7 @@ function AuthPage(props) {
         "Let us tell the stories that matter.", 
         "Even you can help make the world a better place."
     ];
-    const wait = 5000;
-    const divStyles = typingRef.current ? window.getComputedStyle(typingRef): false;
-    const divDisplay = divStyles && divStyles.getPropertyValue('display');
+    const wait = 30000;
 
     useEffect(() => {
         console.log(window.innerWidth)
@@ -25,7 +23,7 @@ function AuthPage(props) {
         return () => {
             console.log('Out of here')
         }
-    });
+    }, []);
 
 
     return (

@@ -9,7 +9,7 @@ class Typewriter {
 
     }
     type = () => {
-        let typespeed = 100;
+        let typespeed = 50;
         if (window.innerWidth > 980) {
             const current = this.wordIndex % this.words.length;
             const fulltext = this.words[current];
