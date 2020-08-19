@@ -5,8 +5,12 @@ import { FaAlignJustify } from 'react-icons/fa';
 
 
 class Header extends Component {
-
-    handleToggle = () => { }
+    state = {
+        isOpen: false
+    }
+    handleToggle = () => {
+        this.setState({isOpen:!this.state.isOpen})
+     }
 
 
     render() {
@@ -22,17 +26,16 @@ class Header extends Component {
                                         <button type="button" className="nav-menu" onClick={this.handleToggle}>
                                             <FaAlignJustify className="nav-icon" />
                                         </button>
-                                        <NavLink to="/auth/login" activeClassName="active" exact>Get Started</NavLink>
                                     </div>
 
                                 </div>
-                                <div className="nav-links-div">
+                                <div className={this.state.isOpen ? "show-nav nav-links-div" : "nav-links-div"}>
                                     <ul>
                                         <li className="nav-links">
                                             <NavLink to="/auth/login" activeClassName="active" exact>Sign in</NavLink>
                                         </li>
                                         <li className="nav-links get-started">
-                                            <NavLink to="/auth/login" activeClassName="active" exact>Get Started</NavLink>
+                                            <NavLink to="/auth/sign-up" activeClassName="active" exact>Get Started</NavLink>
                                         </li>
                                     </ul>
                                 </div>

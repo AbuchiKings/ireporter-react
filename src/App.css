@@ -5,7 +5,7 @@
 }
 
 :root {
-  --mainAsh: #F2EEF7;
+  --mainAsh: #f3eef8;
   --mainWhite: #FFF;
   --serenity: #A3A3B7;
   --mainBlack: #222;
@@ -113,12 +113,13 @@ a:hover {
 
 .header {
   background: transparent;
-  position: relative;
-  height: 80px;
+  position: fixed;
+  width: 100%;
+  min-height: 60px;
+  z-index: 10;
 }
 
 .header .header-div {
-  z-index: 10;
   background: var(--mainWhite);
 }
 
@@ -147,15 +148,46 @@ nav.nav {
   margin-right: 75px;
   display: flex;
   justify-content: space-between;
+  align-content: center;
+  align-items: baseline;
 }
 
-div.logo-div a {
+div.logo-div h3 {
+  margin-bottom: 0;
+}
+
+div.logo-div h3 a {
   color: var(--orange)
+}
+
+div.logo-div h3 a:hover {
+  text-decoration: none;
 }
 
 div.logo-div .nav-toggler-wrapper {
   color: var(--orange);
   display: none;
+}
+
+div.nav-toggler-wrapper button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+  background: var(--orange);
+  outline: none;
+}
+
+div.nav-links-div {
+  transition: all 300ms;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
 }
 
 div.nav-links-div ul, li.nav-links {
@@ -180,6 +212,46 @@ li.get-started a {
   position: relative;
   border: none;
   padding: 10px 26.25px 10px;
+}
+
+li.get-started a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+@media(max-width: 768px) {
+  nav.nav {
+    display: block;
+    padding: .8rem 0rem;
+  }
+  .navbar div.logo-div {
+    margin-right: 0;
+  }
+  div.logo-div .nav-toggler-wrapper {
+    color: var(--orange);
+    display: block;
+  }
+  div.nav-links-div {
+    height: 0;
+    display: block;
+    overflow: hidden;
+    margin-top: 0;
+
+  }
+  div.show-nav {
+    height: 6em;
+    margin-top: 1.5rem;
+  }
+  div.nav-links-div ul, li.nav-links {
+    display: block;
+  }
+  li.nav-links+li.nav-links {
+    margin: 1.4em 0;
+  }
+  li.get-started a {
+    display: block;
+    text-align: center;
+  }
 }
 
 /******************* end of header***************************/
