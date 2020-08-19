@@ -139,17 +139,47 @@ nav.nav {
   flex-wrap: nowrap;
   align-items: baseline;
   justify-content: space-between;
-  padding: .5rem 1rem;
+  padding: .8rem 1rem;
 }
 
-.navbar div.logo-div{
+.navbar div.logo-div {
   flex: 0 0 auto;
   margin-right: 75px;
-  font-size: 1.5rem; 
+  display: flex;
+  justify-content: space-between;
 }
 
-div.logo-div a{
+div.logo-div a {
   color: var(--orange)
+}
+
+div.logo-div .nav-toggler-wrapper {
+  color: var(--orange);
+  display: none;
+}
+
+div.nav-links-div ul, li.nav-links {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.nav-links a {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+li.nav-links+li.nav-links {
+  margin-left: 1.4em;
+}
+
+li.get-started a {
+  border-radius: 0;
+  background: var(--orange);
+  color: #fff;
+  position: relative;
+  border: none;
+  padding: 10px 26.25px 10px;
 }
 
 /******************* end of header***************************/

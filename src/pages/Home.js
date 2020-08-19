@@ -8,13 +8,13 @@ import Header from '../components/Header'
 const Home = () => {
     return (
         <>
-<Header></Header>
-        
-        <div>
-            I am home
+            <Header></Header>
+
+            <div>
+                I am home
             <span><Link to="/auth">  SignUp</Link></span>
 
-        </div>
+            </div>
         </>
     );
 }
