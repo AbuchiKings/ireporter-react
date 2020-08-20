@@ -236,7 +236,6 @@ li.get-started a:hover {
     display: block;
     overflow: hidden;
     margin-top: 0;
-
   }
   div.show-nav {
     height: 6em;
@@ -255,6 +254,92 @@ li.get-started a:hover {
 }
 
 /******************* end of header***************************/
+
+/**HomePage**/
+
+section.intro {
+  position: relative;
+  margin-right: 2rem;
+  width: 100%;
+  margin-left: 2rem;
+  min-height: 600px;
+  float: left;
+  display: flex;
+  justify-content: center;
+}
+.clear {
+clear: both;
+}
+
+div.intro-txt-div {
+  position: absolute;
+  width: 40%;
+  /* top: 80px; */
+  left: 0;
+  text-align: center;
+  z-index: 4;
+}
+
+div.intro-txt-div h2 {
+  margin-top: 150px;
+  font-size: 2rem;
+}
+
+div.intro-img-div {
+  position: absolute;
+  width: 50%;
+  right: 2rem;
+  max-width: 28em;
+  bottom: 0;
+}
+
+div.intro-img-div img {
+  width: 100%;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
+.intro:after, .intro:before {
+  position: absolute;
+  width: 60%;
+  height: 30%;
+  content: "";
+  height: 130px;
+  background: rgb(255, 255, 255);
+  bottom: 0;
+  top: 650px;
+  right: -1.1em;
+  z-index: 2;
+  transform-origin: bottom left;
+  transform: skewY(-7deg);
+  -webkit-transform: skewY(-7deg);
+  -moz-transform: skewY(-7deg);
+  -ms-transform: skewY(-7deg);
+  -o-transform: skewY(-7deg);
+}
+
+.intro:before {
+  top: -100px;
+  transform-origin: top left;
+  transform: skewY(7deg);
+  -webkit-transform: skewY(7deg);
+  -moz-transform: skewY(7deg);
+  -ms-transform: skewY(7deg);
+  -o-transform: skewY(7deg);
+}
+
+section.h-div-md {
+  background: #f4f7fb;
+  margin-top: 3em;
+  min-height: 500px;
+  z-index: 5;
+  position: relative;
+}
+
+/************************************ End of HomePage**************************/
 
 /*AuthPage**/
 
@@ -490,4 +575,30 @@ div.input-grp {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
+}
+
+.slantedDiv {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #000;
+}
+
+.slantedDivA:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: inherit;
+  top: o;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform-origin: top left;
+  transform: skewY(4deg);
+  -webkit-transform: skewY(4deg);
+  -moz-transform: skewY(4deg);
+  -ms-transform: skewY(4deg);
+  -o-transform: skewY(4deg);
 }
