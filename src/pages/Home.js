@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
+import { FaSistrix } from 'react-icons/fa';
 
 
 
@@ -54,7 +55,23 @@ const Home = () => {
                         </div>
                     </section>
                     <div className="clear"></div>
-                    <section className="h-div-md"></section>
+                    <section className="h-div-md">
+                        <div className="board-wrapper">
+                            <div className="board">
+                                <div className="header-top">
+                                    <div className="name">
+                                        <p >iReporter</p>
+                                    </div>
+                                    <div>
+                                        <FaSistrix />
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div className="board-main">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <div className="h-div-bt"></div>
                 </div>
             </main>
