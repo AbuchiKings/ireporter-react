@@ -7,6 +7,9 @@
 :root {
   --mainAsh: #f3eef8;
   --darkGray: rgba(51, 62, 99, 0.5);
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --gray: #cdd2d6;
   --mainWhite: #FFF;
   --serenity: #A3A3B7;
   --mainBlack: #222;
@@ -16,6 +19,8 @@
   --darkblue: #333e63;
   --hover: rgb(245, 9, 80);
   --charcoal: #1B4A56;
+  --pink: #e83e8c;
+  --red: #dc3545;
   --mainTransition: all 0.4s linear;
   --fastTransition: all 0.2s linear;
   --mainSpacing: 3px;
@@ -449,9 +454,12 @@ section.h-div-md:after {
   -o-transform: skewY(-10deg);
 }
 
-section.h-div-md div.board-wrapper{
+section.h-div-md div.board-wrapper {
   width: 100%;
   padding-top: 5rem;
+  padding-bottom: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   position: relative;
   z-index: 4;
 }
@@ -460,22 +468,154 @@ div.board {
   position: relative;
   z-index: 3;
   min-height: 300px;
-  width: 80%;
-  color: red;
-  margin: auto;
-  box-shadow: var(--lightShadow);
+  min-width: 280px;
+  max-width: 900px;
+  margin-left: auto;
+  padding-bottom: 2em;
+  box-shadow: 0px 0px 10px 10px rgba(123, 123, 255, .1);
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-div.board div.header-top{
+
+div.board div.header-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: var(--mainWhite);
-  padding: 10px 0.5rem;
-  min-height:72px;
+  padding: 15px 1rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+div.board div.header-top .name p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+div.board div.header-top .sistrix-div p {
+  font-size: 0.9em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+div.board div.header-top .sistrix-div p+p {
+  margin-left: 2em;
+}
+
+div.board div.header-top .sistrix-div p:nth-of-type(3) {
+  background: var(--gray);
+  color: var(--red);
+  text-align: center;
+  width: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+div.board div.board-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0 1rem;
+}
+
+div.board div.board-main div.txt-div {
+  text-align: left;
+  width: 20%;
+  margin-top: 2rem;
+  ;
+}
+
+div.board div.board-main div.txt-div h4 {
+  font-size: 1.3em;
+  line-height: 1.25;
+  margin-bottom: 1.5em;
+}
+
+
+div.board div.board-main div.txt-div .lines {
+  background: rgba(18,52,102,0.1);
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  height: 8px;
+}
+
+div.board div.board-main div.txt-div .lines:last-child {
+  margin-bottom: 0;
+  width: 72%;
+}
+
+div.board div.board-main div.card-div {
+  width: 75%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
+}
+
+
+div.board div.board-main div.card-div article {
+  min-width: 180px;
+  max-width: 190px;
+  margin: 8px;
+  max-height: 308px;
+  min-height: 308px;
+  padding: 28px 10px 20px 10px;
+  position: relative;
+  text-align: center;
+  background: var(--mainWhite);
+  box-shadow: 0px 0px 3px 3px rgba(123, 123, 255, .1);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+div.board-main div.card-div article .icon {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--charcoal);
+}
+
+
+div.board-main div.card-div article .txt{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  font-size: 1.1rem;
+  font-weight:bold;
+}
+section.h-div-md div.mission-statement{
+  position: fixed;
+  bottom: 20%;
+  z-index: inherit;
+  min-width: 30rem;
+  max-width: 30rem;
+  padding: 28px 30px 30px 40px;
+  box-shadow: 0px 0px 3px 3px rgba(123, 123, 255, .1);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+section.h-div-md div.mission-statement h2{
+  margin-bottom: 2em;
+  font-size: 1.9em;
+  background: inherit;
+}
+section.h-div-md div.mission-statement p{
+  font-size: 1.2em;
 }
 /************************************ End of HomePage**************************/
 
@@ -726,4 +866,13 @@ section.h-div-md:after {
   content: '';
   position: absolute;
   z-index: 3;
+} */
+
+/* article {
+  background: rgba(18, 52, 102, 0.1);
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  height: 8px;
 } */
