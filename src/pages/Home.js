@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
-import { FaSistrix, FaUser, FaTabletAlt, FaPaperPlane, FaMobileAlt, FaDesktop, FaAt } from 'react-icons/fa';
+import { FaSistrix, FaTabletAlt, FaPaperPlane, FaAt } from 'react-icons/fa';
 
 
 
 
 const Home = () => {
+    const boardRef = useRef(null);
+    const articleRef = useRef(null);
+    const [inView, setInView] = useState(false);
+
+
+    useEffect(() => {
+        const scrollHandler = () => {
+            setInView(() => {
+                return isInView();
+            });
+        }
+
+        window.addEventListener('scroll', scrollHandler);
+        setInView(isInView());
+        return () => {
+            window.removeEventListener('scroll', scrollHandler);
+        }
+    }, [])
+
+    const isInView = () => {
+        if (boardRef.current && articleRef.current) {
+            const boardRect = boardRef.current.getBoundingClientRect();
+            return boardRect.top >= 0 && boardRect.top <= window.innerHeight - 250;
+        }
+        return false;
+    }
+
     return (
         <>
             <Header></Header>
@@ -55,8 +82,8 @@ const Home = () => {
                         </div>
                     </section>
                     <div className="clear"></div>
-                    <section className="h-div-md">
-                        <div className="board-wrapper">
+                    <section className="h-div-md" >
+                        <div className="board-wrapper" >
                             <div className="board">
                                 <div className="header-top">
                                     <div className="name">
@@ -68,7 +95,7 @@ const Home = () => {
                                         <p>H</p>
                                     </div>
                                 </div>
-                                <div className="board-main">
+                                <div className="board-main" ref={boardRef}>
                                     <div className="txt-div">
                                         <h4>How it works.</h4>
                                         <div className="lines"></div>
@@ -80,29 +107,47 @@ const Home = () => {
                                         <article >
                                             <FaTabletAlt className="icon"></FaTabletAlt>
                                             <p className="txt">Sign up with your details.</p>
+                                            <div className="line">
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                            </div>
                                         </article>
 
                                         <article className="card">
                                             <FaAt className="icon"></FaAt>
                                             <p className="txt"> Verify account with code sent to your email.</p>
+                                            <div className="line">
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                            </div>
                                         </article>
 
                                         <article className="card">
                                             <FaPaperPlane className="icon"></FaPaperPlane>
                                             <p className="txt">Take-off!</p>
+                                            <div className="line">
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                                <div className="lines"></div>
+                                            </div>
                                         </article>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="mission-statement">
+                        <div className={inView ? "mission-statement inView" : "mission-statement"} ref={articleRef}>
                             <h2>Our mission</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores nihil neque ad sequi culpa dicta non 
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores nihil neque ad sequi culpa dicta non
                             voluptatem quas nam! Culpa autem sequi repellendus exercitationem atque dolorem nemo totam libero consequuntur.</p>
                         </div>
                     </section>
-                    <div className="h-div-bt"></div>
+                    <section className="h-div-bt"> Here</section>
                 </div>
             </main>
 

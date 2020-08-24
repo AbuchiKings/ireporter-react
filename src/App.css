@@ -9,6 +9,7 @@
   --darkGray: rgba(51, 62, 99, 0.5);
   --blue: #007bff;
   --indigo: #6610f2;
+  --bgrNavy: #f4f7fb;
   --gray: #cdd2d6;
   --mainWhite: #FFF;
   --serenity: #A3A3B7;
@@ -541,9 +542,8 @@ div.board div.board-main div.txt-div h4 {
   margin-bottom: 1.5em;
 }
 
-
-div.board div.board-main div.txt-div .lines {
-  background: rgba(18,52,102,0.1);
+div.board-main div.card-div article .lines, div.board div.board-main div.txt-div .lines {
+  background: rgba(18, 52, 102, 0.1);
   display: block;
   width: 100%;
   border-radius: 4px;
@@ -551,7 +551,7 @@ div.board div.board-main div.txt-div .lines {
   height: 8px;
 }
 
-div.board div.board-main div.txt-div .lines:last-child {
+div.board div.board-main .lines:last-child {
   margin-bottom: 0;
   width: 72%;
 }
@@ -563,14 +563,14 @@ div.board div.board-main div.card-div {
   margin-top: 3rem;
 }
 
-
 div.board div.board-main div.card-div article {
-  min-width: 180px;
+  min-width: 150px;
   max-width: 190px;
+  flex: 1;
   margin: 8px;
   max-height: 308px;
   min-height: 308px;
-  padding: 28px 10px 20px 10px;
+  padding: 28px 3px 20px 3px;
   position: relative;
   text-align: center;
   background: var(--mainWhite);
@@ -588,17 +588,27 @@ div.board-main div.card-div article .icon {
   color: var(--charcoal);
 }
 
-
-div.board-main div.card-div article .txt{
-  margin-top: 3rem;
-  margin-bottom: 5rem;
+div.board-main div.card-div article .txt {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
-  font-weight:bold;
+  font-weight: bold;
 }
-section.h-div-md div.mission-statement{
+div.board-main div.card-div article .line {
+ position: absolute;
+ width: 90%;
+ left: 50%;
+ margin-left: -45%;
+ bottom: 20px;
+}
+
+section.h-div-md div.mission-statement {
   position: fixed;
   bottom: 20%;
-  z-index: inherit;
+  transform: translateX(-600);
+  z-index: 4;
+  opacity: 0;
+  background: var(--bgrNavy);
   min-width: 30rem;
   max-width: 30rem;
   padding: 28px 30px 30px 40px;
@@ -608,14 +618,39 @@ section.h-div-md div.mission-statement{
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  transition: transform .7s ease-in-out, opacity .5s ease-in-out;
+  -webkit-transition: transform .7s ease-in-out, opacity .5s ease-in-out;
+  -moz-transition: transform .7s ease-in-out, opacity .5s ease-in-out;
+  -ms-transition: transform .7s ease-in-out, opacity .5s ease-in-out;
+  -o-transition: transform .7s ease-in-out, opacity .5s ease-in-out;
+  -webkit-transform: translateX(-600);
+  -moz-transform: translateX(-600);
+  -ms-transform: translateX(-600);
+  -o-transform: translateX(-600);
 }
-section.h-div-md div.mission-statement h2{
-  margin-bottom: 2em;
+
+section.h-div-md div.inView {
+  opacity: 1;
+  transform: translateX(600);
+  -webkit-transform: translateX(600);
+  -moz-transform: translateX(600);
+  -ms-transform: translateX(600);
+  -o-transform: translateX(600);
+}
+
+section.h-div-md div.mission-statement h2 {
+  margin-bottom: 1.5em;
   font-size: 1.9em;
   background: inherit;
 }
-section.h-div-md div.mission-statement p{
+
+section.h-div-md div.mission-statement p {
   font-size: 1.2em;
+}
+
+section.h-div-bt{
+  width: 100%;
+  min-height: 500px;
 }
 /************************************ End of HomePage**************************/
 
