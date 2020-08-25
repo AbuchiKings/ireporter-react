@@ -10,15 +10,16 @@ function AuthPage(props) {
     const { pathname } = props.location;
 
     const typingRef = useRef(null);
-    const words = ["Together we can make the world a better place.",
-        "We pride ourselves in the number of resolved incidents, but we aim for even better results.",
-        "Let us tell the stories that matter.", 
-        "Even you can help make the world a better place."
-    ];
+
     const wait = 30000;
 
     useEffect(() => {
         console.log(window.innerWidth)
+        const words = ["Together we can make the world a better place.",
+        "We pride ourselves in the number of resolved incidents, but we aim for even better results.",
+        "Let us tell the stories that matter.", 
+        "Even you can help make the world a better place."
+    ];
         new Typewriter(typingRef.current, words, wait).type();
         return () => {
             console.log('Out of here')
