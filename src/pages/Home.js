@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
 import { FaSistrix, FaTabletAlt, FaPaperPlane, FaAt } from 'react-icons/fa';
-
-
-
+import reviews from '../data/reviews';
+import plantImg from '../images/planet.jpg'
 
 const Home = () => {
     const boardRef = useRef(null);
     const articleRef = useRef(null);
     const [inView, setInView] = useState(false);
-
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -147,7 +145,41 @@ const Home = () => {
                             voluptatem quas nam! Culpa autem sequi repellendus exercitationem atque dolorem nemo totam libero consequuntur.</p>
                         </div>
                     </section>
-                    <section className="h-div-bt"> Here</section>
+                    <section className="h-div-bt">
+                        <div className="slidershow middle">
+                            <div className="slides">
+                                {reviews.map((rev, idx) => {
+                                    return (
+                                        <input type="radio" name="rev" id={'rev' + idx++} key={idx} />
+                                    )
+                                })}
+                                {reviews.map((review, idx) => {
+                                    return (
+                                        <div className="slide" key={idx}>
+                                            <article className="review">
+                                                <p> {review.comment}</p>
+                                                <div className="logo">
+                                                    <span>{review.name}</span>
+                                                    <span>{review.logo}</span>
+                                                    {/* <img src={plantImg} alt="" /> */}
+                                                </div>
+
+                                            </article>
+                                        </div>
+                                    )
+                                })}
+
+                            </div>
+                            <div className="navigation">
+                                {reviews.map((rev, idx) => {
+                                    return (
+                                        <label key={idx} htmlFor={'rev' + idx++} className="bar"
+                                            checked={idx < 2 ? true : false} ></label>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </main>
 
