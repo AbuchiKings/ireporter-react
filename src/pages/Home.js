@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
 import { FaSistrix, FaTabletAlt, FaPaperPlane, FaAt } from 'react-icons/fa';
 import reviews from '../data/reviews';
-import plantImg from '../images/planet.jpg'
 
 const Home = () => {
     const boardRef = useRef(null);
@@ -150,38 +149,43 @@ const Home = () => {
                         <div className="title-div">
                             <h2>Here's what they say about us.</h2>
                         </div>
-                        <div className="slidershow middle">
-                        <div className="navigation">
-                                <label htmlFor="rev0" className="bar" checked></label>
-                                <label htmlFor="rev1" className="bar" ></label>
-                                <label htmlFor="rev2" className="bar" ></label>
-                                <label htmlFor="rev3" className="bar" ></label>
-                                <label htmlFor="rev4" className="bar" ></label>
+                        <div className="middle">
+                            <div className="img-div">
+                                <div></div>
                             </div>
-                            <div className="slides">
-                                {reviews.map((rev, idx) => {
-                                    return (
-                                        <input type="radio" name="rev" id={'rev' + idx++} key={idx} />
-                                    )
-                                })}
-                                {reviews.map((review, idx) => {
-                                    return (
-                                        <div key={idx} className={idx === 0 ? 's1 slide' : 'slide'}>
-                                            <article className="review">
-                                                <p> {review.comment}</p>
-                                                <div className="logo">
-                                                    <span>{review.name}</span>
-                                                    <span>{review.logo}</span>
-                                                    {/* <img src={plantImg} alt="" /> */}
-                                                </div>
+                            <div className="slidershow middle">
+                                <div className="navigation">
+                                    <label htmlFor="rev0" className="bar" checked></label>
+                                    <label htmlFor="rev1" className="bar" ></label>
+                                    <label htmlFor="rev2" className="bar" ></label>
+                                    <label htmlFor="rev3" className="bar" ></label>
+                                    <label htmlFor="rev4" className="bar" ></label>
+                                </div>
+                                <div className="slides">
+                                    {reviews.map((rev, idx) => {
+                                        return (
+                                            <input type="radio" name="rev" id={'rev' + idx++} key={idx} />
+                                        )
+                                    })}
+                                    {reviews.map((review, idx) => {
+                                        return (
+                                            <div key={idx} className={idx === 0 ? 's1 slide' : 'slide'}>
+                                                <article className="review">
+                                                    <p> {review.comment}</p>
+                                                    <div className="logo">
+                                                        <span>{review.name}</span>
+                                                        <span>{review.logo}</span>
+                                                        {/* <img src={plantImg} alt="" /> */}
+                                                    </div>
 
-                                            </article>
-                                        </div>
-                                    )
-                                })}
+                                                </article>
+                                            </div>
+                                        )
+                                    })}
+
+                                </div>
 
                             </div>
-                     
                         </div>
                     </section>
                     <section className="lst">

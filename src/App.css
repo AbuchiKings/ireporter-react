@@ -680,9 +680,32 @@ section.h-div-bt {
   background-size: cover;
   background-attachment: fixed;
 }
-section.h-div-bt div.title-div h2{
+
+section.h-div-bt div.title-div h2 {
   font-size: 2.3em;
   font-weight: bold;
+}
+
+section.h-div-bt div.img-div {
+  width: 60%;
+  max-height: 500px;
+  background: var(--orange);
+  left: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -250px;
+  text-align: left;
+  padding-right: 5%;
+}
+
+section.h-div-bt div.img-div div {
+  min-height: 500px;
+  min-width: 90%;
+  background: url(./images/megaphone.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: auto;
 }
 
 section.h-div-bt div.slidershow {
@@ -692,6 +715,8 @@ section.h-div-bt div.slidershow {
   margin-left: auto;
   margin-top: 5rem;
   position: relative;
+  background: transparent;
+  z-index: 6;
 }
 
 section.h-div-bt div.navigation {
@@ -710,6 +735,7 @@ section.h-div-bt label.bar {
   cursor: pointer;
   background: var(--darkblue);
 }
+
 section.h-div-bt label.bar:nth-of-type(even) {
   width: 50px;
   height: 5px;
@@ -718,7 +744,6 @@ section.h-div-bt label.bar:nth-of-type(even) {
   cursor: pointer;
   background: var(--orange);
 }
-
 
 section.h-div-bt input[name="rev"] {
   position: absolute;
