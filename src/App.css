@@ -8,6 +8,7 @@
   --mainAsh: #f3eef8;
   --darkGray: rgba(51, 62, 99, 0.5);
   --blue: #007bff;
+  --lightBlue: #f4f7fb;
   --indigo: #6610f2;
   --bgrNavy: #f4f7fb;
   --gray: #cdd2d6;
@@ -28,6 +29,7 @@
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.2);
   --darkShadow: 4px 20px 10px 0px rgba(0, 0, 0, 0.2);
+  /* font-size: calc(15px + (40 - 30) * ((100vw - 300px) / (1600 - 300))); */
   font-size: 16px;
 }
 
@@ -116,6 +118,20 @@ a:hover {
   width: 5em;
   height: 5px;
   margin: 0 auto;
+}
+
+.bgr-div {
+  height: 170vh;
+  position: absolute;
+  width: 500%;
+  z-index: 1;
+  background: var(--lightBlue);
+  top: 65vh;
+  transform: skewY(-8deg);
+  -webkit-transform: skewY(-8deg);
+  -moz-transform: skewY(-8deg);
+  -ms-transform: skewY(-8deg);
+  -o-transform: skewY(-8deg);
 }
 
 /* End of Title */
@@ -429,31 +445,33 @@ div.intro-img-div img {
 }
 
 section.h-div-md {
-  background: #f4f7fb;
+  background: transparent;
   margin-top: 2em;
-  min-height: 300px;
+  min-height: 400px;
   z-index: 3;
   position: relative;
   width: 100%;
 }
 
-section.h-div-md:after {
+/* section.h-div-md:after, section.h-div-md:before {
+  content: '';
   position: absolute;
-  z-index: 1;
-  width: 100%;
-  min-height: 100%;
-  content: "";
-  background: inherit;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform-origin: top left;
-  transform: skewY(-10deg);
-  -webkit-transform: skewY(-10deg);
-  -moz-transform: skewY(-10deg);
-  -ms-transform: skewY(-10deg);
-  -o-transform: skewY(-10deg);
+  z-index: 3;
 }
+
+section.h-div-md:after {
+  top: -18%;
+  left: 0;
+  border-right: 100vw solid var(--lightBlue);
+  border-top: 15vw solid var(--mainWhite);
+}
+
+section.h-div-md:before {
+  bottom: -18%;
+  right: 0;
+  border-left: 100vw solid var(--lightBlue);
+  border-bottom: 15vw solid var(--mainWhite);
+} */
 
 section.h-div-md div.board-wrapper {
   width: 100%;
@@ -472,6 +490,7 @@ div.board {
   min-width: 280px;
   max-width: 900px;
   margin-left: auto;
+  background: var(--lightBlue);
   padding-bottom: 2em;
   box-shadow: 0px 0px 10px 10px rgba(123, 123, 255, .1);
   border-radius: 4px;
@@ -526,6 +545,7 @@ div.board div.header-top .sistrix-div p:nth-of-type(3) {
 div.board div.board-main {
   display: flex;
   justify-content: space-between;
+  background: var(--lightBlue);
   padding: 1rem 1rem 0 1rem;
 }
 
@@ -594,12 +614,13 @@ div.board-main div.card-div article .txt {
   font-size: 1.1rem;
   font-weight: bold;
 }
+
 div.board-main div.card-div article .line {
- position: absolute;
- width: 90%;
- left: 50%;
- margin-left: -45%;
- bottom: 20px;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  margin-left: -45%;
+  bottom: 20px;
 }
 
 section.h-div-md div.mission-statement {
@@ -648,10 +669,158 @@ section.h-div-md div.mission-statement p {
   font-size: 1.2em;
 }
 
-section.h-div-bt{
+section.h-div-bt {
   width: 100%;
   min-height: 500px;
+  z-index: 5;
+  text-align: center;
+  margin-top: 4em;
+  position: relative;
+  background: transparent;
+  background-size: cover;
+  background-attachment: fixed;
 }
+section.h-div-bt div.title-div h2{
+  font-size: 2.3em;
+  font-weight: bold;
+}
+
+section.h-div-bt div.slidershow {
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  margin-left: auto;
+  margin-top: 5rem;
+  position: relative;
+}
+
+section.h-div-bt div.navigation {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin-left: -25%;
+  display: flex;
+}
+
+section.h-div-bt label.bar {
+  width: 50px;
+  height: 5px;
+  border: 2px solid var(--darkblue);
+  margin: 6px;
+  cursor: pointer;
+  background: var(--darkblue);
+}
+section.h-div-bt label.bar:nth-of-type(even) {
+  width: 50px;
+  height: 5px;
+  border: 2px solid var(--orange);
+  margin: 6px;
+  cursor: pointer;
+  background: var(--orange);
+}
+
+
+section.h-div-bt input[name="rev"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+section.h-div-bt input[name="rev"]:nth-of-type(1) {
+  content: '';
+}
+
+section.h-div-bt div.slides {
+  width: 500%;
+  height: 100%;
+  text-align: left;
+  margin-top: 2em;
+  /* display: flex; */
+}
+
+section.h-div-bt div.slide {
+  width: 320px;
+  height: 100%;
+  flex: 0 1 10%;
+  padding: 44px 40px 40px 56px;
+  display: inline-block;
+  transition: 1s;
+  margin: 10px;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  box-shadow: 0 6px 24px 0 rgba(174, 174, 186, 0.16);
+  background: var(--mainWhite)
+}
+
+section.h-div-bt div.slide article {
+  display: flex;
+  flex-direction: column;
+}
+
+section.h-div-bt div.slide article p {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 26px;
+  position: relative;
+}
+
+section.h-div-bt div.slide article p:after, section.h-div-bt div.slide article p:before {
+  margin-right: 3px;
+  margin-bottom: -14px;
+  right: 100%;
+  bottom: 100%;
+  font-size: 2em;
+  content: '//';
+  font-weight: bolder;
+  position: absolute;
+  display: block;
+  color: var(--lightBlue);
+  transform: skewY(8deg);
+  -webkit-transform: skewY(8deg);
+  -moz-transform: skewY(8deg);
+  -ms-transform: skewY(8deg);
+  -o-transform: skewY(8deg);
+}
+
+section.h-div-bt div.slide article p:before {
+  margin-left: 3px;
+  margin-top: -14px;
+  left: 100%;
+  top: 100%;
+}
+
+#rev0:checked~.s1 {
+  margin-left: 0%;
+}
+
+#rev1:checked~.s1 {
+  margin-left: -340px;
+}
+
+#rev2:checked~.s1 {
+  margin-left: -680px;
+}
+
+#rev3:checked~.s1 {
+  margin-left: -1020px;
+}
+
+#rev4:checked~.s1 {
+  margin-left: -1360px;
+}
+
+section.lst {
+  width: 100%;
+  margin: 0;
+  min-height: 400px;
+  position: relative;
+  z-index: 30;
+  margin-top: 5em;
+}
+
 /************************************ End of HomePage**************************/
 
 /*AuthPage**/
@@ -890,18 +1059,14 @@ div.input-grp {
   -o-transform: scale(1);
 }
 
-/* 
+/*
 section.h-div-md:after {
   top: -5%;
   left: 0;
   border-right: 100vw solid transparent;
   border-top: 15.625rem solid var(--mainWhite);
 }
-section.h-div-md:after {
-  content: '';
-  position: absolute;
-  z-index: 3;
-} */
+ */
 
 /* article {
   background: rgba(18, 52, 102, 0.1);

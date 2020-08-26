@@ -36,6 +36,7 @@ const Home = () => {
     return (
         <>
             <Header></Header>
+            <div className="bgr-div"></div>
             <main className="h-main">
                 <div className="h-main-page">
                     <section className="h-div-tp intro">
@@ -146,7 +147,17 @@ const Home = () => {
                         </div>
                     </section>
                     <section className="h-div-bt">
+                        <div className="title-div">
+                            <h2>Here's what they say about us.</h2>
+                        </div>
                         <div className="slidershow middle">
+                        <div className="navigation">
+                                <label htmlFor="rev0" className="bar" checked></label>
+                                <label htmlFor="rev1" className="bar" ></label>
+                                <label htmlFor="rev2" className="bar" ></label>
+                                <label htmlFor="rev3" className="bar" ></label>
+                                <label htmlFor="rev4" className="bar" ></label>
+                            </div>
                             <div className="slides">
                                 {reviews.map((rev, idx) => {
                                     return (
@@ -155,7 +166,7 @@ const Home = () => {
                                 })}
                                 {reviews.map((review, idx) => {
                                     return (
-                                        <div className="slide" key={idx}>
+                                        <div key={idx} className={idx === 0 ? 's1 slide' : 'slide'}>
                                             <article className="review">
                                                 <p> {review.comment}</p>
                                                 <div className="logo">
@@ -170,15 +181,11 @@ const Home = () => {
                                 })}
 
                             </div>
-                            <div className="navigation">
-                                {reviews.map((rev, idx) => {
-                                    return (
-                                        <label key={idx} htmlFor={'rev' + idx++} className="bar"
-                                            checked={idx < 2 ? true : false} ></label>
-                                    )
-                                })}
-                            </div>
+                     
                         </div>
+                    </section>
+                    <section className="lst">
+                        <div></div>
                     </section>
                 </div>
             </main>
