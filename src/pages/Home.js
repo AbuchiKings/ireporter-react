@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
 import { FaSistrix, FaTabletAlt, FaPaperPlane, FaAt } from 'react-icons/fa';
-import reviews from '../data/reviews';
+import { reviews, causes } from '../data/data';
 
 const Home = () => {
     const boardRef = useRef(null);
@@ -105,6 +105,21 @@ const Home = () => {
                                 </p>
                                     <p>A more accountable leadership.</p>
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="h-div-md2" >
+                        <div>
+                            <h2>Our Causes</h2>
+                            <div className="flex-div">
+                                {causes.map((c, idx) => {
+                                    return (
+                                        <div className="img-div" key={idx + 1}>
+                                            <span>{c.text}</span>
+                                            <img src={c.img} alt={c.text} />
+                                        </div>
+                                    )
+                                })}
                             </div>
                         </div>
                     </section>

@@ -41,6 +41,7 @@ body {
   line-height: 1.4;
   position: relative;
   overflow-x: hidden;
+  text-align: center;
 }
 
 ul li {
@@ -153,8 +154,8 @@ a:hover {
 
 .header-div>.content-div {
   width: 100%;
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -226,7 +227,7 @@ div.nav-links-div ul, li.nav-links {
 .nav-links a {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 li.nav-links+li.nav-links {
@@ -374,7 +375,7 @@ div.intro-txt-div>div.get-started span a {
   position: relative;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.83rem;
   border-radius: 0;
   background: var(--orange);
   position: relative;
@@ -487,11 +488,53 @@ section.h-div-md1 div.mv-div {
 section.h-div-md1 div.mv-div>div {
   margin: 2em;
 }
+
 section.h-div-md1 div.mv-div>div>h3 {
   font-size: 2.1em;
 }
+
 section.h-div-md1 div.mv-div>div>p {
   font-size: 1.2rem;
+}
+
+section.h-div-md2 {
+  z-index: 6;
+  position: relative;
+  width: 100%;
+}
+
+section.h-div-md2>div {
+  padding-right: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+section.h-div-md2>div>div.flex-div {
+  max-width: 80%;
+  min-width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+section.h-div-md2>div>div.flex-div .img-div {
+  max-width: 32%;
+  min-width: 270px;
+  flex: 1 1 200px;
+  margin: 0.4rem;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+section.h-div-md2>div>div.flex-div .img-div span {
+  position: absolute;
+}
+
+section.h-div-md2>div>div.flex-div .img-div img {
+  width: 100%;
+  opacity: 0.5;
 }
 
 section.h-div-md {
