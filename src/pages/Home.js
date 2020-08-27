@@ -115,11 +115,69 @@ const Home = () => {
                                 {causes.map((c, idx) => {
                                     return (
                                         <div className="img-div" key={idx + 1}>
-                                            <span>{c.text}</span>
+                                            <div className="txt-div"><span>{c.text}</span></div>
                                             <img src={c.img} alt={c.text} />
                                         </div>
                                     )
                                 })}
+                            </div>
+                        </div>
+                    </section>
+                    <section className="h-div-md3">
+                        <div>
+                            <div className="header-div">
+                                <h2>Here is how it works</h2>
+                            </div>
+                            <div className="txt-div">
+                                <ul>
+                                    <li>Sign up with your details.</li>
+                                    <li>Verify account with the code sent to your email.</li>
+                                    <li>Start making a differnce.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </section>
+                    <section className="h-div-bt">
+                        <div className="title-div">
+                            <h2>What they say about us.</h2>
+                        </div>
+                        <div className="middle">
+                            <div className="img-div">
+                                <div></div>
+                            </div>
+                            <div className="slidershow middle">
+                                <div className="navigation">
+                                    <label htmlFor="rev0" className="bar" checked></label>
+                                    <label htmlFor="rev1" className="bar" ></label>
+                                    <label htmlFor="rev2" className="bar" ></label>
+                                    <label htmlFor="rev3" className="bar" ></label>
+                                    <label htmlFor="rev4" className="bar" ></label>
+                                </div>
+                                <div className="slides">
+                                    {reviews.map((rev, idx) => {
+                                        return (
+                                            <input type="radio" name="rev" id={'rev' + idx++} key={idx} />
+                                        )
+                                    })}
+                                    {reviews.map((review, idx) => {
+                                        return (
+                                            <div key={idx} className={idx === 0 ? 's1 slide' : 'slide'}>
+                                                <article className="review">
+                                                    <p> {review.comment}</p>
+                                                    <div className="logo">
+                                                        <span>{review.name}</span>
+                                                        <span>{review.logo}</span>
+                                                        {/* <img src={plantImg} alt="" /> */}
+                                                    </div>
+
+                                                </article>
+                                            </div>
+                                        )
+                                    })}
+
+                                </div>
+
                             </div>
                         </div>
                     </section>
@@ -188,56 +246,15 @@ const Home = () => {
                             voluptatem quas nam! Culpa autem sequi repellendus exercitationem atque dolorem nemo totam libero consequuntur.</p>
                         </div>
                     </section>
+
                     <section className="h-div-bt">
-                        <div className="title-div">
-                            <h2>Here's what they say about us.</h2>
-                        </div>
-                        <div className="middle">
-                            <div className="img-div">
-                                <div></div>
+                        <div className="flex-div">
+                            <div className="donate">
+                                <span>Donate</span>
                             </div>
-                            <div className="slidershow middle">
-                                <div className="navigation">
-                                    <label htmlFor="rev0" className="bar" checked></label>
-                                    <label htmlFor="rev1" className="bar" ></label>
-                                    <label htmlFor="rev2" className="bar" ></label>
-                                    <label htmlFor="rev3" className="bar" ></label>
-                                    <label htmlFor="rev4" className="bar" ></label>
-                                </div>
-                                <div className="slides">
-                                    {reviews.map((rev, idx) => {
-                                        return (
-                                            <input type="radio" name="rev" id={'rev' + idx++} key={idx} />
-                                        )
-                                    })}
-                                    {reviews.map((review, idx) => {
-                                        return (
-                                            <div key={idx} className={idx === 0 ? 's1 slide' : 'slide'}>
-                                                <article className="review">
-                                                    <p> {review.comment}</p>
-                                                    <div className="logo">
-                                                        <span>{review.name}</span>
-                                                        <span>{review.logo}</span>
-                                                        {/* <img src={plantImg} alt="" /> */}
-                                                    </div>
-
-                                                </article>
-                                            </div>
-                                        )
-                                    })}
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-                    <section className="h-div-bt1">
-                        <div>
-                            <h2 className="txt">
-                                Our Sponsors
-                            </h2>
-                            <div className="flex-div">
-
+                            <div className="involve">
+                                <p>Have any ideas you'd like to share with us?</p>
+                                <span>Get Involved</span>
                             </div>
                         </div>
                     </section>

@@ -50,7 +50,7 @@ export const reviews = [
 
 export const causes = [
     {
-        text: "Government Accountability",
+        text: "Government \n Accountability",
         img: gacct
     },
     {
@@ -62,15 +62,15 @@ export const causes = [
         img: health
     },
     {
-        text: "Sustainable Environment",
+        text: "Sustainable \n Environment",
         img: envt
     },
     {
-        text: "Small Business",
+        text: "Small \n Business",
         img: sme
     },
     {
-        text: "Gender Equality",
+        text: "Gender \n Equality",
         img: equality
     },
 ]
