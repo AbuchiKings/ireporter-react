@@ -35,7 +35,7 @@ class Header extends Component {
                                             <NavLink to="/auth/login" activeClassName="active" exact>Sign in</NavLink>
                                         </li>
                                         <li className="nav-links get-started">
-                                            <NavLink to="/auth/sign-up" activeClassName="active" exact>Get Started</NavLink>
+                                            <NavLink to="/auth/sign-up" activeClassName="active" exact>Join Us</NavLink>
                                         </li>
                                     </ul>
                                 </div>

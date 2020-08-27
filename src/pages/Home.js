@@ -40,10 +40,10 @@ const Home = () => {
                 <div className="h-main-page">
                     <section className="h-div-tp intro">
                         <div className="intro-txt-div flex-item">
-                            <h2>
+                            <h1>
                                 See a societal situation in need of change?
-                            </h2>
-                            <h2 className="fnw-bold">Let us fix it.</h2>
+                            </h1>
+                            <h1 className="fnw-bold">Let us fix it.</h1>
                             <div className="stats">
                                 <div className="t-reports ">
                                     <span>Total Reports</span>
@@ -57,10 +57,11 @@ const Home = () => {
                                 </div>
 
                             </div>
-                            <p>While we pride ourselves in our numbers, our core concerns are about changing lives, growth and sustainability.</p>
+                            <p>While we pride ourselves in our numbers, our core concerns are about
+                            advocacy, sustainable growth and accountability.</p>
                             <div className="get-started">
                                 <span>
-                                    <Link to="/auth/sign-up">Get Started</Link>
+                                    <Link to="/auth/sign-up">Join Us Today</Link>
                                 </span>
                             </div>
                             <div className="pr-info">
@@ -80,6 +81,33 @@ const Home = () => {
                         </div>
                     </section>
                     <div className="clear"></div>
+                    <section className="h-div-md1" >
+                        <div className="flex-div">
+                            <div className="about-div">
+                                <h2>Who we are</h2>
+                                <p>We are a non-governmental organization commited
+                                to improving human welfare and advocacy.
+                            </p>
+                            </div>
+                            <div className="mv-div">
+                                <div className="m-div">
+                                    <h3>Mission</h3>
+                                    <p>To end all forms of corruption, human deprivation,
+                                    human rights abuse, oppression and inequality.
+                                </p>
+                                </div>
+                                <div className="v-div">
+                                    <h3>Vision</h3>
+                                    <p>To live in a world free of corruption. Where education
+                                    and healthcare is affordable and accessible to any and everyone.
+                                </p>
+                                    <p>An end to human rights abuse, inequality and oppression.
+                                </p>
+                                    <p>A more accountable leadership.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <section className="h-div-md" >
                         <div className="board-wrapper" >
                             <div className="board">
@@ -188,8 +216,15 @@ const Home = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="lst">
-                        <div></div>
+                    <section className="h-div-bt1">
+                        <div>
+                            <h2 className="txt">
+                                Our Sponsors
+                            </h2>
+                            <div className="flex-div">
+
+                            </div>
+                        </div>
                     </section>
                 </div>
             </main>
