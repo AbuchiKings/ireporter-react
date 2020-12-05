@@ -30,7 +30,25 @@
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.2);
   --darkShadow: 4px 20px 10px 0px rgba(0, 0, 0, 0.2);
   /* font-size: calc(15px + (40 - 30) * ((100vw - 300px) / (1600 - 300))); */
-  font-size: 16px;
+  font-size: 14px;
+}
+
+@media(max-width: 1000px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media(max-width: 768px) {
+  :root {
+    font-size: 12.5px;
+  }
+}
+
+@media(max-width: 500px) {
+  :root {
+    font-size: 11px;
+  }
 }
 
 /* globals**/
@@ -305,12 +323,23 @@ section.intro {
 div.intro-txt-div {
   width: 40%;
   text-align: center;
-  margin-left: 2em;
+  margin-left: 1.8rem;
   margin-right: .4em;
 }
 
+@media(max-width: 1000px) {
+  div.intro-txt-div {
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+  section.intro {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
 div.intro-txt-div h1 {
-  margin-top: 2.5em;
+  margin-top: .8em;
   font-size: 2.5rem;
   font-weight: 500;
   word-spacing: 0px;
@@ -406,7 +435,7 @@ div.intro-txt-div>div.pr-info>p {
 }
 
 div.intro-txt-div>div.pr-info>div {
-  font-size: 0.8em;
+  font-size: 0.9rem;
   text-align: left;
   color: var(--darkGray);
   margin-top: 0.8em;
@@ -632,15 +661,15 @@ section.h-div-md3>div .txt-div li+li {
   margin-top: 2em;
 }
 
-section.h-div-bt {
+section.h-div-bt1 {
   background: transparent;
-  margin-top: 2em;
+  margin-top: 3em;
   z-index: 2;
   position: relative;
   width: 100%;
 }
 
-section.h-div-bt>div.flex-div {
+section.h-div-bt1>div.flex-div {
   background: var(--mainAsh);
   background: #F7F7F8;
   position: relative;
@@ -649,30 +678,60 @@ section.h-div-bt>div.flex-div {
   justify-content: space-between;
 }
 
-section.h-div-bt>div.flex-div>div.donate {
+section.h-div-bt1>div.flex-div>div.donate {
   max-width: 47%;
   min-width: 47%;
-  background: linear-gradient(to bottom, rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.7)), url(./images/woman.jpg);
+  background: linear-gradient(to bottom, rgb(0, 0, 0, 0.3), rgb(0, 0, 0, 0.3)), url(./images/boy-with-book.jpg);
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-section.h-div-bt>div.flex-div>div.involve {
+section.h-div-bt1>div.flex-div>div.donate span {
+  color: #fff;
+  word-spacing: 2px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0;
+  background: var(--orange);
+  position: relative;
+  border: none;
+  padding: 1rem 0 1rem;
+  min-width: 10rem;
+  max-width: 10rem;
+  display: inline-block;
+}
+
+section.h-div-bt1>div.flex-div>div.involve {
   max-width: 47%;
   min-width: 47%;
   min-height: 20rem;
   background-image: linear-gradient(246deg, #3b3f63, #2f3350);
   color: rgba(255, 255, 255, 0.5);
-  font-size: 21px;
+  font-size: 1.25rem;
   text-align: center;
+  padding: 0.8rem;
 }
 
-section.h-div-md {
-  background: transparent;
-  margin-top: 2em;
-  min-height: 400px;
-  z-index: 3;
+section.h-div-bt1>div.flex-div>div.involve span {
+  color: #fff;
+  word-spacing: 2px;
   position: relative;
-  width: 100%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0;
+  background: #54d4f2;
+  position: relative;
+  border: none;
+  padding: 1rem 0 1rem;
+  min-width: 10rem;
+  max-width: 10rem;
+  display: inline-block;
 }
 
 /* section.h-div-md:after, section.h-div-md:before {

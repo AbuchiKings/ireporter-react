@@ -2,35 +2,34 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
-import { FaSistrix, FaTabletAlt, FaPaperPlane, FaAt } from 'react-icons/fa';
 import { reviews, causes } from '../data/data';
 
 const Home = () => {
-    const boardRef = useRef(null);
-    const articleRef = useRef(null);
-    const [inView, setInView] = useState(false);
+    // const boardRef = useRef(null);
+    // const articleRef = useRef(null);
+    // const [inView, setInView] = useState(false);
 
-    useEffect(() => {
-        const scrollHandler = () => {
-            setInView(() => {
-                return isInView();
-            });
-        }
+    // useEffect(() => {
+    //     const scrollHandler = () => {
+    //         setInView(() => {
+    //             return isInView();
+    //         });
+    //     }
 
-        window.addEventListener('scroll', scrollHandler);
-        setInView(isInView());
-        return () => {
-            window.removeEventListener('scroll', scrollHandler);
-        }
-    }, [])
+    //     window.addEventListener('scroll', scrollHandler);
+    //     setInView(isInView());
+    //     return () => {
+    //         window.removeEventListener('scroll', scrollHandler);
+    //     }
+    // }, [])
 
-    const isInView = () => {
-        if (boardRef.current && articleRef.current) {
-            const boardRect = boardRef.current.getBoundingClientRect();
-            return boardRect.top >= 0 && boardRect.top <= window.innerHeight - 250;
-        }
-        return false;
-    }
+    // const isInView = () => {
+    //     if (boardRef.current && articleRef.current) {
+    //         const boardRect = boardRef.current.getBoundingClientRect();
+    //         return boardRect.top >= 0 && boardRect.top <= window.innerHeight - 250;
+    //     }
+    //     return false;
+    // }
 
     return (
         <>
@@ -182,78 +181,20 @@ const Home = () => {
                         </div>
                     </section>
                     <section className="h-div-md" >
-                        <div className="board-wrapper" >
-                            <div className="board">
-                                <div className="header-top">
-                                    <div className="name">
-                                        <p >iReporter</p>
-                                    </div>
-                                    <div className="sistrix-div">
-                                        <p><FaSistrix className="sistrix" /></p>
-                                        <p>Profile</p>
-                                        <p>H</p>
-                                    </div>
-                                </div>
-                                <div className="board-main" ref={boardRef}>
-                                    <div className="txt-div">
-                                        <h4>How it works.</h4>
-                                        <div className="lines"></div>
-                                        <div className="lines"></div>
-                                        <div className="lines"></div>
-                                        <div className="lines"></div>
-                                    </div>
-                                    <div className="card-div">
-                                        <article >
-                                            <FaTabletAlt className="icon"></FaTabletAlt>
-                                            <p className="txt">Sign up with your details.</p>
-                                            <div className="line">
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                            </div>
-                                        </article>
-
-                                        <article className="card">
-                                            <FaAt className="icon"></FaAt>
-                                            <p className="txt"> Verify account with code sent to your email.</p>
-                                            <div className="line">
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                            </div>
-                                        </article>
-
-                                        <article className="card">
-                                            <FaPaperPlane className="icon"></FaPaperPlane>
-                                            <p className="txt">Take-off!</p>
-                                            <div className="line">
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                                <div className="lines"></div>
-                                            </div>
-                                        </article>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={inView ? "mission-statement inView" : "mission-statement"} ref={articleRef}>
-                            <h2>Our mission</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores nihil neque ad sequi culpa dicta non
-                            voluptatem quas nam! Culpa autem sequi repellendus exercitationem atque dolorem nemo totam libero consequuntur.</p>
-                        </div>
                     </section>
 
-                    <section className="h-div-bt">
+                    <section className="h-div-bt1">
                         <div className="flex-div">
                             <div className="donate">
                                 <span>Donate</span>
                             </div>
                             <div className="involve">
-                                <p>Have any ideas you'd like to share with us?</p>
+                                <p>We are are always on the look-out for people
+                                who are passionate about making changes that matter.
+                                 </p>
+                                <p>
+                                    Have any ideas you'd like to share with us?
+                                 </p>
                                 <span>Get Involved</span>
                             </div>
                         </div>
