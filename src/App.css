@@ -581,7 +581,7 @@ section.h-div-md2>div h2 {
 }
 
 section.h-div-md2>div>div.flex-div {
-  max-width: 100%;
+  max-width: 80%;
   min-width: 300px;
   margin: auto;
   display: flex;
@@ -589,6 +589,12 @@ section.h-div-md2>div>div.flex-div {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+@media(max-width: 768px) {
+  section.h-div-md2>div>div.flex-div {
+    max-width: 100%;
+  }
 }
 
 section.h-div-md2>div>div.flex-div .img-div {
