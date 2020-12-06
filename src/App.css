@@ -47,7 +47,7 @@
 
 @media(max-width: 500px) {
   :root {
-    font-size: 11px;
+    font-size: 12ujupx;
   }
 }
 
@@ -327,19 +327,8 @@ div.intro-txt-div {
   margin-right: .4em;
 }
 
-@media(max-width: 1000px) {
-  div.intro-txt-div {
-    margin-left: 0rem;
-    margin-right: 1rem;
-  }
-  section.intro {
-    margin-right: 1rem;
-    margin-left: 1rem;
-  }
-}
-
 div.intro-txt-div h1 {
-  margin-top: .8em;
+  margin-top: 1.2em;
   font-size: 2.5rem;
   font-weight: 500;
   word-spacing: 0px;
@@ -390,7 +379,7 @@ div.intro-txt-div>div.stats span+span {
 
 div.intro-txt-div>p {
   color: var(--darkGray);
-  margin: 3em 0 0 0px;
+  margin: 3rem 0 0 0px;
   font-size: 1.1rem;
   text-align: left;
 }
@@ -467,7 +456,7 @@ div.intro-txt-div>div.pr-info>div.pr-list span::before {
 div.intro-img-div {
   width: 59%;
   right: 0rem;
-  max-width: 35em;
+  max-width: 35rem;
   bottom: 0;
 }
 
@@ -480,6 +469,38 @@ div.intro-img-div img {
   -o-border-radius: 1em;
 }
 
+@media(max-width: 1000px) {
+  section.intro {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  div.intro-txt-div {
+    margin-left: 0rem;
+    margin-right: 1rem;
+  }
+  div.intro-txt-div>p {
+    margin: 2rem 0 0 0px;
+  }
+  div.intro-txt-div h1 {
+    font-size: 2.3rem;
+  }
+  div.intro-txt-div>div.get-started span a {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 700px) {
+  div.intro-img-div {
+    display: none;
+  }
+  div.intro-txt-div {
+    width: 100%;
+    margin-right: 0rem;
+  }
+}
+
+/* ************/
+
 section.h-div-md1 {
   background: transparent;
   margin-top: 3em;
@@ -488,6 +509,12 @@ section.h-div-md1 {
   position: relative;
   width: 100%;
   text-align: center;
+}
+
+@media(max-width: 700px) {
+  section.h-div-md1 {
+    margin-top: 1em;
+  }
 }
 
 section.h-div-md1 div.flex-div {
@@ -532,6 +559,8 @@ section.h-div-md1 div.mv-div>div>p {
   font-size: 1.2rem;
 }
 
+/*** *********/
+
 section.h-div-md2 {
   z-index: 6;
   position: relative;
@@ -540,7 +569,7 @@ section.h-div-md2 {
 
 section.h-div-md2>div {
   padding-right: 1rem;
-  padding-right: 1rem;
+  padding-left: 1rem;
   width: 100%;
   margin-top: 2em;
 }
@@ -552,7 +581,7 @@ section.h-div-md2>div h2 {
 }
 
 section.h-div-md2>div>div.flex-div {
-  max-width: 80%;
+  max-width: 100%;
   min-width: 300px;
   margin: auto;
   display: flex;
