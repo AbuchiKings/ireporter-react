@@ -591,7 +591,7 @@ section.h-div-md2>div>div.flex-div {
   align-items: center;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1099px) {
   section.h-div-md2>div>div.flex-div {
     max-width: 100%;
   }
