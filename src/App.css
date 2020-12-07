@@ -166,8 +166,8 @@ a:hover {
 
 .header-div>.content-div {
   width: 100%;
-  padding-right: 0.9rem;
-  padding-left: 0.9rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -292,6 +292,13 @@ li.get-started a:hover {
   li.get-started a {
     display: block;
     text-align: center;
+  }
+}
+
+@media(max-width: 350px) {
+  .header-div>.content-div {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }
 
@@ -580,7 +587,7 @@ section.h-div-md2>div h2 {
 
 section.h-div-md2>div>div.flex-div {
   max-width: 80%;
-  min-width: 300px;
+  min-width: 290px;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -637,6 +644,13 @@ section.h-div-md2>div>div.flex-div .img-div img {
 
 section.h-div-md2>div>div.flex-div .img-div:hover>img {
   opacity: 1;
+}
+
+@media(max-width: 350px) {
+  section.h-div-md2>div {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
 }
 
 section.h-div-md3 {
@@ -1001,7 +1015,7 @@ section.h-div-bt1>div.flex-div {
 section.h-div-bt1>div.flex-div>div {
   min-width: 260px;
   flex: 1 1 250px;
-  max-width: 47%;
+  max-width: 50%;
   justify-self: center;
   min-height: 260px;
 }
@@ -1062,6 +1076,11 @@ section.h-div-bt1>div.flex-div>div.involve span {
 @media(max-width: 768px) {
   section.h-div-bt1>div.flex-div {
     flex-wrap: wrap;
+  }
+}
+@media(max-width: 400px) {
+  section.h-div-bt1>div.flex-div>div {
+    max-width: 100%;
   }
 }
 
