@@ -1,39 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+// import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
 import protestImg from '../images/sa.jpg'
 import { reviews, causes } from '../data/data';
 
 const Home = () => {
-    // const boardRef = useRef(null);
-    // const articleRef = useRef(null);
-    // const [inView, setInView] = useState(false);
-
-    // useEffect(() => {
-    //     const scrollHandler = () => {
-    //         setInView(() => {
-    //             return isInView();
-    //         });
-    //     }
-
-    //     window.addEventListener('scroll', scrollHandler);
-    //     setInView(isInView());
-    //     return () => {
-    //         window.removeEventListener('scroll', scrollHandler);
-    //     }
-    // }, [])
-
-    // const isInView = () => {
-    //     if (boardRef.current && articleRef.current) {
-    //         const boardRect = boardRef.current.getBoundingClientRect();
-    //         return boardRect.top >= 0 && boardRect.top <= window.innerHeight - 250;
-    //     }
-    //     return false;
-    // }
 
     return (
         <>
-            <Header></Header>
             <div className="bgr-div"></div>
             <main className="h-main">
                 <div className="h-main-page">

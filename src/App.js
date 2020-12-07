@@ -1,23 +1,26 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import Home from './pages/Home';
+import Navbar from './components/Header';
+import Footer from './components/Footer';
 
 
 function App(props) {
-  //const { pathname } = props.location;
-  useEffect(() => {
-    console.log('App component was loaded');
-  }, []);
+  const { pathname } = props.location;
+  const paths = pathname.split('/')
+  console.log(paths)
+  const otherpages = !paths.includes('auth') && <Navbar pathname={pathname} />;
+  const footer = !paths.includes('auth') && <Footer />;
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/auth" component={AuthPage} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </Router>
+      {otherpages}
+      <Switch>
+        <Route path="/auth" component={AuthPage} />
+        <Route path="/" component={Home} />
+      </Switch>
+      {footer}
     </>
   );
 }

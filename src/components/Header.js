@@ -5,12 +5,16 @@ import { FaAlignJustify } from 'react-icons/fa';
 
 
 class Header extends Component {
+    constructor(props) {
+        super()
+        console.log(props)
+    }
     state = {
         isOpen: false
     }
     handleToggle = () => {
-        this.setState({isOpen:!this.state.isOpen})
-     }
+        this.setState({ isOpen: !this.state.isOpen })
+    }
 
 
     render() {
