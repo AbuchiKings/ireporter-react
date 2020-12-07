@@ -999,7 +999,7 @@ section.h-div-bt1>div.flex-div {
 }
 
 section.h-div-bt1>div.flex-div>div {
-  min-width: 250px;
+  min-width: 260px;
   flex: 1 1 250px;
   max-width: 47%;
   justify-self: center;
@@ -1062,9 +1062,6 @@ section.h-div-bt1>div.flex-div>div.involve span {
 @media(max-width: 768px) {
   section.h-div-bt1>div.flex-div {
     flex-wrap: wrap;
-  }
-  section.h-div-bt1>div.flex-div>div {
-    min-width: ;
   }
 }
 
