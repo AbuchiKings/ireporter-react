@@ -1460,8 +1460,8 @@ footer small a:hover {
     flex-wrap: wrap;
   }
   footer .flex-container>div {
-    width: 100%;
-    margin-top: 1em;
+    width: 90%;
+    margin-top: 2em;
   }
   footer .flex-container>div:first-child {
     margin-top: 0;
@@ -1473,9 +1473,6 @@ footer small a:hover {
     width: 85%;
     padding-right: 6em;
   }
-  footer button {
-    right: 10%;
-  }
   footer h6.follow-us {
     margin-top: 2em;
   }
@@ -1485,8 +1482,9 @@ footer small a:hover {
   footer {
     padding: 4em 0;
   }
-  footer button {
-    right: 6%;
+  footer .flex-container>div {
+    width: 100%;
+    margin-top: 2em;
   }
   footer small {
     padding: 0.3em;

@@ -11,12 +11,12 @@ function Footer() {
                     <h5>About <Link to="/">i<span>Reporter</span></Link></h5>
                     <p>
                         We are a non-governmental organization commited to
-                        improving human welfare and advocacy. Given the 
+                        improving human welfare and advocacy. Given the
                         widespread corruption and human rights abuse within
-                        Africa, we believe a reduction in such vices could be
-                        by improving human welfare through education, health, 
-                        gender equality and supporting small businesses while 
-                        mentaining eco-stabilty.
+                        Africa, we believe a reduction in such vices can be
+                        achieved by improving human welfare through education,
+                        health, gender equality and supporting small businesses
+                        while mentaining eco-stabilty.
                 </p>
                 </div>
 
