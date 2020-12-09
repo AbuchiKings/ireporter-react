@@ -8,9 +8,9 @@ function SignUp() {
         event.preventDefault();
     }
     return (
-        <div className="login-center">
+        <div className="signup-center">
 
-            <form className="login-form" onSubmit={handleSubmit}>
+            <form className="signup-form " onSubmit={handleSubmit}>
                 <div className="input-grp">
                     <input type="text"
                         aria-label="name" name="name" id="name"
@@ -49,7 +49,7 @@ function SignUp() {
                 </div>
 
                 <div className="input-grp">
-                    <button className="btn-primary login-btn">
+                    <button className="btn-primary signup-btn">
                         Sign Up
                         </button>
                 </div>

@@ -62,13 +62,12 @@ function AuthPage(props) {
                 </div>
                 <div className="form-footer">
                     <p>
-                        <span>Pricing</span>
                         <span>Terms</span>
                         <span>Privacy</span>
                         <span>Contact us</span>
                         <small className="copyright">
                             Copyright &copy; 2020 All rights reserved | Made by
-                            {/* <span><Link to="/">  Abuchi Kingsley</Link></span> */}
+                            <span><Link to="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer">  Abuchi Kingsley</Link></span>
                         </small>
                     </p>
                 </div>
