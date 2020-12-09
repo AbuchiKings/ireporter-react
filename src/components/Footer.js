@@ -49,7 +49,7 @@ function Footer() {
             </div>
             <small>
                 Copyright &copy; 2020 All rights reserved | Made by
-                <span><Link to="/">  Abuchi Kingsley</Link></span>
+                <span><Link to="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer">  Abuchi Kingsley</Link></span>
             </small>
 
         </footer>
