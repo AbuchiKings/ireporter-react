@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaBeer, FaFacebook, } from 'react-icons/fa';
-import {  } from 'react-icons/ti';
+import { FaGithub, FaTwitter, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { } from 'react-icons/ti';
 import { Link } from 'react-router-dom';
 
 function Footer() {
@@ -10,10 +10,13 @@ function Footer() {
                 <div className="footer-about">
                     <h5>About <Link to="/">i<span>Reporter</span></Link></h5>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Tempore libero, dolor vitae, deserunt quod illo provident
-                        a laboriosam dignissimos excepturi illum neque. Provident
-                        illo dicta quaerat excepturi, magnam corrupti totam!
+                        We are a non-governmental organization commited to
+                        improving human welfare and advocacy. Given the 
+                        widespread corruption and human rights abuse within
+                        Africa, we believe a reduction in such vices could be
+                        by improving human welfare through education, health, 
+                        gender equality and supporting small businesses while 
+                        mentaining eco-stabilty.
                 </p>
                 </div>
 
@@ -28,18 +31,19 @@ function Footer() {
 
                 <div className="footer-subscribe">
                     <h6>Subscribe to our Newsletter</h6>
-                    <input type="text" placeholder="Enter Email"/>
-                    <button className="btn" disabled>Send</button>
-
-                    <h6 className="follow-us">Follow us</h6>
-                <ul>
-                    <li><Link to="/"><FaFacebook/></Link></li>
-                    <li><Link to="/"><FaBeer/></Link></li>
-                    <li><Link to="/"><FaBeer/></Link></li>
-                    <li><Link to="/"><FaBeer/></Link></li>
-                </ul>
+                    <div className="subscribe-wrapper">
+                        <input type="text" placeholder="Enter Email" />
+                        <button className="btn btn-primary" disabled>Send</button>
+                    </div>
+                    <h6 className="follow-us">Connect with us</h6>
+                    <ul>
+                        <li><Link to="https://twitter.com/awesomekings" target="_blank" rel="noopener noreferrer" aria-labelledby="twitter-icon"><FaTwitter /></Link></li>
+                        <li><Link to="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer" aria-labelledby="github-icon"><FaGithub /></Link></li>
+                        <li><Link to="https://linkedin.com/in/ndinigwe-abuchi" target="_blank" rel="noopener noreferrer" aria-labelledby="linkedin-icon"><FaLinkedin /></Link></li>
+                        <li><Link to="https://wa.me/+2348062158380" target="_blank" rel="noopener noreferrer" aria-labelledby="whatsapp-icon"><FaWhatsapp /></Link></li>
+                    </ul>
                 </div>
-                
+
 
 
             </div>

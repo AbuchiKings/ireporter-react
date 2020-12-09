@@ -17,6 +17,7 @@
   --mainBlack: #222;
   --orange: #FF5745;
   --lightGreen: #76d895;
+  --blueGreen: #54d4f2;
   --purple: #f282d9;
   --darkblue: #333e63;
   --hover: rgb(245, 9, 80);
@@ -41,7 +42,7 @@
 
 @media(max-width: 768px) {
   :root {
-    font-size: 12.5px;
+    font-size: 13px;
   }
 }
 
@@ -1078,6 +1079,7 @@ section.h-div-bt1>div.flex-div>div.involve span {
     flex-wrap: wrap;
   }
 }
+
 @media(max-width: 400px) {
   section.h-div-bt1>div.flex-div>div {
     max-width: 100%;
@@ -1296,25 +1298,25 @@ div.input-grp {
 /* Footer**/
 
 footer {
-  background: var(--mainAsh);
   padding: 8em 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 footer .flex-container {
   padding-bottom: 6em;
-  border-bottom: 1px solid var(--serenity);
   display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
+  justify-content: center;
+  padding: 0 1em;
   max-width: 1300px;
   margin: auto;
 }
 
 footer h6, footer h5 {
-  color: var(--mainWhite);
+  color: var(--darkblue);
   margin-bottom: 1em;
-  font-weight: 300;
+  font-weight: 600;
+  font-size: 1.1rem;
+  ;
+  opacity: 0.35;
 }
 
 footer h6.follow-us {
@@ -1326,13 +1328,13 @@ footer .footer-about {
 }
 
 footer .footer-about p {
-  width: 65%;
-  color: var(--serenity);
+  width: 85%;
+  margin: auto;
+  color: var(--darkblue);
 }
 
 footer .footer-about h5 a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
-  color: var(--mainWhite);
+  color: var(--darkblue);
 }
 
 footer .footer-quick-links {
@@ -1350,11 +1352,7 @@ footer .footer-quick-links ul li {
 }
 
 footer .footer-quick-links ul li a {
-  color: var(--serenity);
-}
-
-footer .footer-quick-links ul li a:hover {
-  color: var(--mainwhite);
+  color: var(--darkblue);
 }
 
 footer .footer-subscribe {
@@ -1365,37 +1363,45 @@ footer .footer-subscribe {
   position: relative;
 }
 
-footer .footer-subscribe input {
-  border-radius: 15px;
-  height: 43px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border: 1px solid var(--serenity);
+footer .footer-subscribe div.subscribe-wrapper {
+  border: 0.2px solid var(--mainAsh);
   background-color: transparent;
+  border-radius: 15px;
+  width: 80%;
+  position: relative;
+  margin: auto;
+  text-align: left;
+}
+
+footer .footer-subscribe input {
+  height: 43px;
+  border: none;
+  outline: none;
   font-size: 1em;
   padding: 10px;
-  color: var(--mainWhite);
-  width: 80%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: var(--darkblue);
   outline: none;
   padding-right: 5.3em;
 }
 
-footer button {
+footer .footer-subscribe button {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: var(--roseRed);
+  background-color: var(--orange);
+  right: 0;
   font-size: 1em;
-  color: black;
   padding: 10px 30px 9px;
+  height: 43px;
   line-height: 1.5;
   line-height: 1.5;
   cursor: pointer;
-  border: none;
   position: absolute;
-  right: 8%;
 }
 
-footer button:hover {
-  background: var(--mainWhite);
+footer .footer-subscribe button:hover {
+  background-color: #dc3e2c;
 }
 
 /* footer .footer-subscribe{
@@ -1412,11 +1418,17 @@ footer .footer-subscribe ul li:first-child {
 }
 
 footer .footer-subscribe ul li a {
-  color: var(--serenity);
+  color: var(--blueGreen);
+  font-size: 1.2rem;
 }
 
 footer .footer-subscribe ul li a:hover {
-  color: var(--mainWhite);
+  opacity: 0.7;
+  transition: var(--fastTransition);
+  -webkit-transition: var(--fastTransition);
+  -moz-transition: var(--fastTransition);
+  -ms-transition: var(--fastTransition);
+  -o-transition: var(--fastTransition);
 }
 
 footer small {
@@ -1427,11 +1439,17 @@ footer small {
 }
 
 footer small a {
-  color: var(--serenity);
+  color: var(--blueGreen);
 }
 
 footer small a:hover {
-  color: var(--mainWhite);
+  opacity: 0.7;
+  text-decoration: none;
+  transition: var(--fastTransition);
+  -webkit-transition: var(--fastTransition);
+  -moz-transition: var(--fastTransition);
+  -ms-transition: var(--fastTransition);
+  -o-transition: var(--fastTransition);
 }
 
 @media(max-width: 890px) {
@@ -1449,11 +1467,10 @@ footer small a:hover {
     margin-top: 0;
   }
   footer .footer-about p {
-    font-size: 1em;
     width: 100%;
   }
   footer .footer-subscribe input {
-    width: 90%;
+    width: 85%;
     padding-right: 6em;
   }
   footer button {
@@ -1474,8 +1491,11 @@ footer small a:hover {
   footer small {
     padding: 0.3em;
   }
-  footer .footer-subscribe input {
-    padding-right: 5em;
+  footer .footer-subscribe div.subscribe-wrapper {
+    border: 0.2px solid var(--serenity);
+    background-color: transparent;
+    border-radius: 15px;
+    width: 100%;
   }
 }
 
