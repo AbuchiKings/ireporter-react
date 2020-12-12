@@ -7,7 +7,6 @@ import { FaAlignJustify } from 'react-icons/fa';
 class Header extends Component {
     constructor(props) {
         super()
-        console.log(props)
     }
     state = {
         isOpen: false
