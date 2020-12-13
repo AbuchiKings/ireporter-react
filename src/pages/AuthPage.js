@@ -2,30 +2,46 @@ import React from 'react';
 import Login from './../components/Login';
 import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import SignUp from './../components/SignUp';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Typewriter from './../util/typewriter';
 
 
 function AuthPage(props) {
     const { pathname } = props.location;
-
     const typingRef = useRef(null);
-
     const wait = 30000;
 
     useEffect(() => {
-        console.log(window.innerWidth)
         const words = ["Together we can make the world a better place.",
-        "We pride ourselves in the number of resolved incidents, but we aim for even better results.",
-        "Let us tell the stories that matter.", 
-        "Even you can help make the world a better place."
-    ];
+            "We pride ourselves in the number of resolved incidents, but we aim for even better results.",
+            "Let us tell the stories that matter.",
+            "Even you can help make the world a better place."
+        ];
         new Typewriter(typingRef.current, words, wait).type();
         return () => {
             console.log('Out of here')
         }
     }, []);
+    
+    const [state, setData] = useState({
+        fullname: '',
+        username: '',
+        email: '',
+        phone_number: '',
+        password: '',
+        admin_code: '',
+    });
 
+    const handleChange = (event) => {
+        console.log(event.target)
+        setData({ [event.target.name]: event.target.value });
+        console.log(state)
+    }
+
+    const handleSignupSubmit = (event) => {
+        event.preventDefault();
+        console.log(state)
+    }
 
     return (
         <div className="main">
@@ -56,7 +72,9 @@ function AuthPage(props) {
                     })()}
                     <Switch>
                         <Route exact path="/auth/login" component={Login} />
-                        <Route exact path="/auth/sign-up" component={SignUp} />
+                        <Route exact path="/auth/sign-up" render={() => (
+                            <SignUp data={state} handleInput={handleChange} handleSubmit={handleSignupSubmit} />
+                        )} />
                         <Redirect from='/auth' to='/auth/sign-up' />
                     </Switch>
                 </div>
