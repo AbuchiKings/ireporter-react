@@ -56,20 +56,20 @@ const Home = () => {
                     <div className="clear"></div>
                     <section className="h-div-md1" >
                         <div className="flex-div">
-                            <div className="about-div">
+                            <div className="about-div" >
                                 <h2>Who we are</h2>
                                 <p>We are a non-governmental organization commited
                                 to improving human welfare and advocacy.
                             </p>
                             </div>
                             <div className="mv-div">
-                                <div className="m-div">
+                                <div className="m-div" data-aos="fade-right" data-aos-offset="100" data-aos-duration="1000">
                                     <h3>Mission</h3>
                                     <p>To end all forms of corruption, human deprivation,
                                     human rights abuse, oppression and inequality.
                                 </p>
                                 </div>
-                                <div className="v-div">
+                                <div className="v-div" data-aos="fade-left" data-aos-offset="100" data-aos-duration="1000">
                                     <h3>Vision</h3>
                                     <p>To live in a world free of corruption. Where education
                                     and healthcare is affordable and accessible to any and everyone.
@@ -82,9 +82,9 @@ const Home = () => {
                         </div>
                     </section>
                     <section className="h-div-md2" >
-                        <div>
+                        <div >
                             <h2>Our Causes</h2>
-                            <div className="flex-div">
+                            <div className="flex-div" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500" data-aos-mirror="true">
                                 {causes.map((c, idx) => {
                                     return (
                                         <div className="img-div" key={idx + 1}>
@@ -96,7 +96,7 @@ const Home = () => {
                             </div>
                         </div>
                     </section>
-                    <section className="h-div-md3">
+                    <section className="h-div-md3" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500" data-aos-mirror="true">
                         <div>
                             <div className="header-div">
                                 <h2>Here is how it works</h2>
@@ -116,10 +116,10 @@ const Home = () => {
                             <h2>What they say about us.</h2>
                         </div>
                         <div className="middle">
-                            <div className="img-div">
+                            <div className="img-div" data-aos="fade-right" data-aos-offset="70" data-aos-duration="1000" data-aos-mirror="true">
                                 <div></div>
                             </div>
-                            <div className="slidershow middle">
+                            <div className="slidershow middle" data-aos="fade-left" data-aos-offset="200" data-aos-duration="1000" data-aos-mirror="true">
                                 <div className="navigation">
                                     <label htmlFor="rev0" className="bar" checked></label>
                                     <label htmlFor="rev1" className="bar" ></label>

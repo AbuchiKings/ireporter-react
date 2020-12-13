@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import './App.css';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import Home from './pages/Home';
 import Navbar from './components/Header';
 import Footer from './components/Footer';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 function App(props) {
@@ -13,6 +15,10 @@ function App(props) {
   console.log(paths)
   const otherpages = !paths.includes('auth') && <Navbar pathname={pathname} />;
   const footer = !paths.includes('auth') && <Footer />;
+  useEffect(() => {
+    AOS.init();
+    //AOS.refresh();
+  }, []);
   return (
     <>
       {otherpages}
