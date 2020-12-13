@@ -1192,7 +1192,8 @@ div.form-section>h1 {
 }
 
 .form-footer small a {
-  color: var(--blueGreen);;
+  color: var(--blueGreen);
+  ;
 }
 
 .form-footer small a:hover {
@@ -1373,7 +1374,7 @@ footer .footer-subscribe div.subscribe-wrapper {
   border: 0.2px solid var(--mainAsh);
   background-color: transparent;
   border-radius: 15px;
-  width: 80%;
+  width: 100%;
   position: relative;
   margin: auto;
   text-align: left;
@@ -1474,6 +1475,9 @@ footer small a:hover {
   }
   footer .footer-about p {
     width: 100%;
+  }
+  footer .footer-subscribe div.subscribe-wrapper {
+    width: 80%;
   }
   footer .footer-subscribe input {
     width: 85%;
