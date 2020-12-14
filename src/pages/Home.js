@@ -119,7 +119,7 @@ const Home = () => {
                             <div className="img-div" data-aos="fade-right" data-aos-offset="70" data-aos-duration="1000" data-aos-mirror="true">
                                 <div></div>
                             </div>
-                            <div className="slidershow middle" data-aos="fade-left" data-aos-offset="200" data-aos-duration="1000" data-aos-mirror="true">
+                            <div className="slidershow middle" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000" data-aos-mirror="true">
                                 <div className="navigation">
                                     <label htmlFor="rev0" className="bar" checked></label>
                                     <label htmlFor="rev1" className="bar" ></label>
