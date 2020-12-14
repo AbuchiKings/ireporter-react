@@ -1,3 +1,5 @@
-export function signupUser(userData) {
-    return { type: "SIGNUP_USER", user: userData }
+import * as actionTypes from './actionTypes'
+
+export function createUser(userData) {
+    return { type: actionTypes.CREATE_USER, user: userData }
 }
