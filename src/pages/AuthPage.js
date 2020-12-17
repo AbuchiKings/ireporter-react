@@ -4,10 +4,15 @@ import { Link, Switch, Route, Redirect } from 'react-router-dom';
 import SignUp from './../components/SignUp';
 import { useEffect, useRef, useState } from 'react';
 import Typewriter from './../util/typewriter';
+import { connect } from 'react-redux';
+import { createUser } from '../redux/actions/authActions';
+
+//import PropTypes from 'prop-types';
 
 
-function AuthPage(props) {
-    const { pathname } = props.location;
+
+function AuthPage({ location, createUser }) {
+    const { pathname } = location;
     const typingRef = useRef(null);
     const wait = 30000;
 
@@ -22,7 +27,7 @@ function AuthPage(props) {
             console.log('Out of here')
         }
     }, []);
-    
+
     const [state, setData] = useState({
         fullname: '',
         username: '',
@@ -33,14 +38,14 @@ function AuthPage(props) {
     });
 
     const handleChange = (event) => {
-        console.log(event.target)
-        setData({ [event.target.name]: event.target.value });
+        const { value, name } = event.target;
+        setData({ ...state, [name]: value });
         console.log(state)
     }
 
-    const handleSignupSubmit = (event) => {
+    const handleSignupSubmit = async (event) => {
         event.preventDefault();
-        console.log(state)
+        await createUser(state).catch(error => alert(error))
     }
 
     return (
@@ -95,4 +100,15 @@ function AuthPage(props) {
     );
 }
 
-export default AuthPage;
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    };
+}
+const mapDispatchToProps = {
+    createUser
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthPage);
