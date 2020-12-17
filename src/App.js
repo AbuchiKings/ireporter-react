@@ -12,7 +12,6 @@ import "aos/dist/aos.css";
 function App(props) {
   const { pathname } = props.location;
   const paths = pathname.split('/')
-  console.log(paths)
   const otherpages = !paths.includes('auth') && <Navbar pathname={pathname} />;
   const footer = !paths.includes('auth') && <Footer />;
   useEffect(() => {

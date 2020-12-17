@@ -5,7 +5,7 @@ import SignUp from './../components/SignUp';
 import { useEffect, useRef, useState } from 'react';
 import Typewriter from './../util/typewriter';
 import { connect } from 'react-redux';
-import { createUser } from '../redux/actions/authActions';
+import { createUserSuccess as createUser } from '../redux/actions/authActions';
 
 //import PropTypes from 'prop-types';
 
@@ -24,7 +24,6 @@ function AuthPage({ location, createUser }) {
         ];
         new Typewriter(typingRef.current, words, wait).type();
         return () => {
-            console.log('Out of here')
         }
     }, []);
 
@@ -40,12 +39,22 @@ function AuthPage({ location, createUser }) {
     const handleChange = (event) => {
         const { value, name } = event.target;
         setData({ ...state, [name]: value });
-        console.log(state)
+
     }
 
     const handleSignupSubmit = async (event) => {
         event.preventDefault();
-        await createUser(state).catch(error => alert(error))
+        const fullname = state.fullname && state.fullname.split(/\s+/);
+        let newState;
+
+        if (!newState && fullname && fullname.length > 1) {
+            const firstname = fullname[0];
+            const lastname = fullname[fullname.length - 1];
+            newState = { ...state, firstname: firstname, lastname: lastname };
+            delete newState.fullname;
+        }
+console.log(newState)
+        await createUser(newState).catch(error => console.log(error));
     }
 
     return (

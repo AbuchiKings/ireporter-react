@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState } from "react";
-
 
 
 function SignUp({ data, handleInput, handleSubmit }) {
- 
+
     return (
         <div className="signup-center">
 
@@ -34,10 +32,8 @@ function SignUp({ data, handleInput, handleSubmit }) {
                 </div>
                 <div className="input-grp">
                     <input type="text" aria-label="phone-number"
-                    autoComplete="tel-country-code"
-                        autoComplete="phone-number" name="phone_number" value={data.phone_number}
-                        id="phone-number" required onChange={(event) => handleInput(event)}
-                    />
+                        autoComplete="tel-country-code" name="phone_number" value={data.phone_number}
+                        id="phone-number" required onChange={(event) => handleInput(event)} />
                     <label htmlFor="phone-number">Phone number</label>
                 </div>
                 <div className="input-grp">
