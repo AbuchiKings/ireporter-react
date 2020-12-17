@@ -1,5 +1,5 @@
 const state = {
-    isLoading: false,
+    // isLoading: false,
     user: {
         id: undefined,
         email: undefined,
@@ -14,21 +14,21 @@ const state = {
         isLoggedIn: false,
         authStatus: false,
     },
-    incidents: [],
-    incident: {
-        id: '',
-        createdBy: '',
-        createdOn: '',
-        creator: '',
-        updatedOn: '',
-        title: '',
-        type: '',
-        location: '',
-        status: '',
-        comment: '',
-        images: '',
-        videos: '',
-    },
+    // incidents: [],
+    // incident: {
+    //     id: '',
+    //     createdBy: '',
+    //     createdOn: '',
+    //     creator: '',
+    //     updatedOn: '',
+    //     title: '',
+    //     type: '',
+    //     location: '',
+    //     status: '',
+    //     comment: '',
+    //     images: '',
+    //     videos: '',
+    // },
 };
 
 export default state;
