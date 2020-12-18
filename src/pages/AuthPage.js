@@ -5,13 +5,12 @@ import SignUp from './../components/SignUp';
 import { useEffect, useRef, useState } from 'react';
 import Typewriter from './../util/typewriter';
 import { connect } from 'react-redux';
-import { createUserSuccess as createUser } from '../redux/actions/authActions';
+import { createUserSuccess as createUser, loginSuccess as login } from '../redux/actions/authActions';
 
 //import PropTypes from 'prop-types';
 
 
-
-function AuthPage({ location, createUser }) {
+function AuthPage({ location, createUser, login }) {
     const { pathname } = location;
     const typingRef = useRef(null);
     const wait = 30000;
@@ -53,8 +52,13 @@ function AuthPage({ location, createUser }) {
             newState = { ...state, firstname: firstname, lastname: lastname };
             delete newState.fullname;
         }
-console.log(newState)
-        await createUser(newState).catch(error => console.log(error));
+        console.log(newState)
+        createUser(newState).catch(error => console.log(error));
+    }
+
+    const handleLoginSubmit = async (event) => {
+        event.preventDefault();
+        login({ email: state.email, password: state.password }).catch(error => console.log(error));
     }
 
     return (
@@ -85,7 +89,8 @@ console.log(newState)
                         }
                     })()}
                     <Switch>
-                        <Route exact path="/auth/login" component={Login} />
+                        <Route exact path="/auth/login" render={() => (
+                            <Login data={state} handleInput={handleChange} handleSubmit={handleLoginSubmit} />)} />
                         <Route exact path="/auth/sign-up" render={() => (
                             <SignUp data={state} handleInput={handleChange} handleSubmit={handleSignupSubmit} />
                         )} />
@@ -116,7 +121,8 @@ const mapStateToProps = (state) => {
     };
 }
 const mapDispatchToProps = {
-    createUser
+    createUser,
+    login
 }
 
 

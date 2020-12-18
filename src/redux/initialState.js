@@ -13,6 +13,8 @@ const state = {
         token: undefined,
         isLoggedIn: false,
         authStatus: false,
+        message: undefined,
+        registered: undefined
     },
     // incidents: [],
     // incident: {
