@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const baseUrl = process.env.REACT_APP_API_URL;
 const request = async ({ route, verb, payload }) => {
-  const token = JSON.parse(localStorage.getItem('token'));
+  const token = localStorage.getItem('token');
   const method = verb || 'get';
   const headers = { 'Authorization': `Bearer ${token}` };
   if (!token) {

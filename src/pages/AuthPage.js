@@ -10,7 +10,7 @@ import { createUserSuccess as createUser, loginSuccess as login } from '../redux
 //import PropTypes from 'prop-types';
 
 
-function AuthPage({ location, createUser, login }) {
+function AuthPage({ location, createUser, login, history }) {
     const { pathname } = location;
     const typingRef = useRef(null);
     const wait = 30000;
@@ -34,6 +34,8 @@ function AuthPage({ location, createUser, login }) {
         password: '',
         admin_code: '',
     });
+    const [signUpErrors, setSignUpErrors] = useState({});
+    const [loginErrors, setLoginErrors] = useState({});
 
     const handleChange = (event) => {
         const { value, name } = event.target;
@@ -53,12 +55,12 @@ function AuthPage({ location, createUser, login }) {
             delete newState.fullname;
         }
         console.log(newState)
-        createUser(newState).catch(error => console.log(error));
+         createUser(newState).then(() => history.push('/auth/login')).catch(error => console.log(error));
     }
 
     const handleLoginSubmit = async (event) => {
         event.preventDefault();
-        login({ email: state.email, password: state.password }).catch(error => console.log(error));
+        login({ email: state.email, password: state.password }).then(() => history.push('/dashboard')).catch(error => console.log(error));
     }
 
     return (
