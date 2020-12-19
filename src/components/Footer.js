@@ -37,10 +37,10 @@ function Footer() {
                     </div>
                     <h6 className="follow-us">Connect with us</h6>
                     <ul>
-                        <li><Link to="https://twitter.com/awesomekings" target="_blank" rel="noopener noreferrer" aria-labelledby="twitter-icon"><FaTwitter /></Link></li>
-                        <li><Link to="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer" aria-labelledby="github-icon"><FaGithub /></Link></li>
-                        <li><Link to="https://linkedin.com/in/ndinigwe-abuchi" target="_blank" rel="noopener noreferrer" aria-labelledby="linkedin-icon"><FaLinkedin /></Link></li>
-                        <li><Link to="https://wa.me/+2348062158380" target="_blank" rel="noopener noreferrer" aria-labelledby="whatsapp-icon"><FaWhatsapp /></Link></li>
+                        <li><a href="https://twitter.com/awesomekings" target="_blank" rel="noopener noreferrer" aria-labelledby="twitter-icon"><FaTwitter /></a></li>
+                        <li><a href="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer" aria-labelledby="github-icon"><FaGithub /></a></li>
+                        <li><a href="https://linkedin.com/in/ndinigwe-abuchi" target="_blank" rel="noopener noreferrer" aria-labelledby="linkedin-icon"><FaLinkedin /></a></li>
+                        <li><a href="https://wa.me/+2348062158380" target="_blank" rel="noopener noreferrer" aria-labelledby="whatsapp-icon"><FaWhatsapp /></a></li>
                     </ul>
                 </div>
 
@@ -49,7 +49,7 @@ function Footer() {
             </div>
             <small>
                 Copyright &copy; 2020 All rights reserved | Made by
-                <span><Link to="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer">  Abuchi Kingsley</Link></span>
+                <span><a href="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer">  Abuchi Kingsley</a></span>
             </small>
 
         </footer>
