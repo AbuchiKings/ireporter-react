@@ -1,5 +1,5 @@
 const state = {
-    // isLoading: false,
+    isLoading: false,
     user: {
         id: undefined,
         email: undefined,
@@ -16,7 +16,7 @@ const state = {
         message: undefined,
         registered: undefined
     },
-    // incidents: [],
+    incidents: [],
     // incident: {
     //     id: '',
     //     createdBy: '',
