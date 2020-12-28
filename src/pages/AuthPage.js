@@ -60,7 +60,7 @@ function AuthPage({ location, createUser, login, history }) {
 
     const handleLoginSubmit = async (event) => {
         event.preventDefault();
-        login({ email: state.email, password: state.password }).then(() => history.push('/dashboard')).catch(error => console.log(error));
+        login({ email: state.email, password: state.password }).then(() => history.push('/profile')).catch(error => console.log(error));
     }
 
     return (

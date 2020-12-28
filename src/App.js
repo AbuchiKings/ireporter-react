@@ -7,7 +7,7 @@ import Navbar from './components/Header';
 import Footer from './components/Footer';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Dashbard from './pages/Dashbard';
+import Profile from './pages/Profile';
 
 
 function App(props) {
@@ -24,7 +24,7 @@ function App(props) {
       {otherpages}
       <Switch>
         <Route path="/auth" component={AuthPage} />
-        <Route path="/dashboard" component={Dashbard} />
+        <Route path="/profile" component={Profile} />
         <Route path="/" component={Home} />
       </Switch>
       {footer}
