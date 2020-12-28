@@ -1221,11 +1221,11 @@ div.form-section>h1 {
 
 /*AuthPage Login**/
 
-form {
+div.form-section form {
   position: relative;
 }
 
-label {
+div.form-section form label {
   display: block;
   position: relative;
   top: -27px;
@@ -1314,26 +1314,80 @@ main.profile-main {
 div.div-middle {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
   background: transparent;
-  padding: 7rem 2rem 4rem 2rem;
+  padding: 7rem 1rem 4rem 1rem;
+}
+
+div.div-middle>div+div{
+  margin-left: 7rem;
 }
 
 div.div-middle>div.aside-nav {
-  position: absolute;
-  top: 7rem;
-  background: transparent;
+  flex: 0 1 300px;
+  background-image: linear-gradient(246deg, #3b3f63, #2f3350);
+  min-height: 400px;
 }
 
 div.div-middle>div.main-content {
   background: var(--mainWhite);
-  width: 70%;
+  flex: 1 1 300px;;
   min-height: 400px;
-  margin-left: auto;
+  max-width: 550px;
+  /* margin-left: auto; */
+  padding: 4rem 4rem 3rem 3rem;
+  text-align: left;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+
+div.div-middle>div.main-content .profile-header-div h1 {
+  font-size: 1.7em;
+}
+
+div.main-content>div.profile-details-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+
+div.main-content>div.profile-details-div>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
+}
+
+div.main-content>div.profile-details-div>div+div {
+  margin-top: 5rem;
+}
+
+div.profile-details-div>div label {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+}
+div.main-content .extra{
+  color: var(--darkGray);
+  font-size: 0.9rem;
+}
+div.main-content>div.profile-details-div .label-button{
+  background: transparent;
+  border: none;
+
+}
+
+div.main-content>div.profile-details-div .dp-div img {
+  width: 5%;
 }
 
 /****** End of Dashboard*******/
