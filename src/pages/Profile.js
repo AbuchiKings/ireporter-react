@@ -1,5 +1,5 @@
 import React from 'react';
-import protestImg from '../images/sa.jpg'
+import boyImg from '../images/boy-with-book.jpg'
 
 
 export default function Profile() {
@@ -23,7 +23,7 @@ export default function Profile() {
                             </div>
 
                             <div className="details dp-div">
-                                <img src={protestImg} alt="" />
+                                <img src={boyImg} alt="" />
                             </div>
                         </div>
                         <div>
@@ -34,7 +34,7 @@ export default function Profile() {
                             </div>
 
                             <div className="details">
-                                <input type="text" name="firstname" id="" />
+                                <input type="text" name="firstname" id="" value="Abuchi" className="profile-input"/>
                             </div>
                         </div>
                         <div>
@@ -45,7 +45,7 @@ export default function Profile() {
                             </div>
 
                             <div className="details">
-                                <input type="text" name="lastname" id="" />
+                                <input type="text" name="lastname" id="" value="Ndinigwe"/>
                             </div>
                         </div>
                         <div>
@@ -57,7 +57,7 @@ export default function Profile() {
 
                             <div className="details">
                                 <input type="email"
-                                    aria-label="email" name="email" id="email"
+                                    aria-label="email" name="email" id="email" value="abuchikingsley76@gmail.com"
                                 />
                             </div>
                         </div>
@@ -68,7 +68,7 @@ export default function Profile() {
                             </div>
 
                             <div className="details">
-                                <input type="text" aria-label="phone-number" name="phone_number" id="phone-number" />
+                                <input type="text" aria-label="phone-number" name="phone_number" id="phone-number" value="+2348062158380" />
                             </div>
                         </div>
                     </div>

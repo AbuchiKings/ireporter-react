@@ -1320,7 +1320,7 @@ div.div-middle {
   padding: 7rem 1rem 4rem 1rem;
 }
 
-div.div-middle>div+div{
+div.div-middle>div+div {
   margin-left: 7rem;
 }
 
@@ -1332,11 +1332,11 @@ div.div-middle>div.aside-nav {
 
 div.div-middle>div.main-content {
   background: var(--mainWhite);
-  flex: 1 1 300px;;
+  flex: 1 1 300px;
   min-height: 400px;
   max-width: 550px;
   /* margin-left: auto; */
-  padding: 4rem 4rem 3rem 3rem;
+  padding: 4rem 4rem 4rem 4rem;
   text-align: left;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -1357,7 +1357,6 @@ div.main-content>div.profile-details-div {
   margin-top: 4rem;
 }
 
-
 div.main-content>div.profile-details-div>div {
   display: flex;
   flex-direction: row;
@@ -1368,7 +1367,7 @@ div.main-content>div.profile-details-div>div {
 }
 
 div.main-content>div.profile-details-div>div+div {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 div.profile-details-div>div label {
@@ -1376,18 +1375,51 @@ div.profile-details-div>div label {
   font-size: 1em;
   font-weight: bold;
 }
-div.main-content .extra{
+
+div.main-content .extra {
   color: var(--darkGray);
-  font-size: 0.9rem;
+  
 }
-div.main-content>div.profile-details-div .label-button{
+
+div.main-content>div.profile-details-div .label-button {
   background: transparent;
   border: none;
-
+  font-size: 0.9rem;
+}
+div.main-content>div.profile-details-div>div>div{
+  max-width: 170px;
+  flex: 1 1 100px;
+}
+div.main-content>div.profile-details-div>div>div+div{
+  max-width: 170px;
+}
+div.main-content>div.profile-details-div .dp-div {
+  max-width: 130px;
+  flex: 1 1 100px;
 }
 
 div.main-content>div.profile-details-div .dp-div img {
-  width: 5%;
+  width: 100%;
+}
+div.main-content>div.profile-details-div>div>div+div input{
+  height: 3em;
+  width: 100%;
+  padding: 2px 2px;
+  padding-bottom: 2px;
+  position: relative;
+  font-size: 0.9rem;
+  background: none !important;
+  border: none;
+  color: var(--darkGray);
+  pointer-events: none;
+}
+
+div.main-content>div.profile-details-div>div>div+div input:hover {
+  cursor: default;
+}
+
+div.main-content>div.profile-details-div>div>div+div input:focus {
+  outline: none;
 }
 
 /****** End of Dashboard*******/
