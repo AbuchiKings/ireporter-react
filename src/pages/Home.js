@@ -63,13 +63,13 @@ const Home = () => {
                             </p>
                             </div>
                             <div className="mv-div">
-                                <div className="m-div" data-aos="fade-right" data-aos-offset="100" data-aos-duration="1000">
+                                <div className="m-div" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
                                     <h3>Mission</h3>
                                     <p>To end all forms of corruption, human deprivation,
                                     human rights abuse, oppression and inequality.
                                 </p>
                                 </div>
-                                <div className="v-div" data-aos="fade-left" data-aos-offset="100" data-aos-duration="1000">
+                                <div className="v-div" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
                                     <h3>Vision</h3>
                                     <p>To live in a world free of corruption. Where education
                                     and healthcare is affordable and accessible to any and everyone.
@@ -84,11 +84,11 @@ const Home = () => {
                     <section className="h-div-md2" >
                         <div >
                             <h2>Our Causes</h2>
-                            <div className="flex-div" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500" data-aos-mirror="true">
+                            <div className="flex-div">
                                 {causes.map((c, idx) => {
                                     return (
-                                        <div className="img-div" key={idx + 1}>
-                                            <div className="txt-div"><span>{c.text}</span></div>
+                                        <div className="img-div" key={idx + 1} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500" data-aos-mirror="true">
+                                            <div className="txt-div" ><span>{c.text}</span></div>
                                             <img src={c.img} alt={c.text} />
                                         </div>
                                     )

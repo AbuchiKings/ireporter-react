@@ -34,8 +34,8 @@ function AuthPage({ location, createUser, login, history }) {
         password: '',
         admin_code: '',
     });
-    const [signUpErrors, setSignUpErrors] = useState({});
-    const [loginErrors, setLoginErrors] = useState({});
+    // const [signUpErrors, setSignUpErrors] = useState({});
+    // const [loginErrors, setLoginErrors] = useState({});
 
     const handleChange = (event) => {
         const { value, name } = event.target;

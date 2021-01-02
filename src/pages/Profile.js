@@ -71,6 +71,12 @@ export default function Profile() {
                                 <input type="text" aria-label="phone-number" name="phone_number" id="phone-number" value="+2348062158380" />
                             </div>
                         </div>
+                        <div>
+
+                            <div className="details">
+                            <button type="submit" className="btn btn-primary">Edit</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
