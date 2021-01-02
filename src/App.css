@@ -114,10 +114,12 @@ a:hover {
 .btn-primary:hover {
   background-color: transparent;
 }
+
 .btn-primary:focus {
   border: 2px solid var(--orange);
   outline: none;
 }
+
 .btn-primary:active {
   background: var(--orange);
   outline: none;
@@ -1309,6 +1311,7 @@ div.input-grp {
 .login-btn:hover, .signup-btn:hover {
   color: var(--mainBlack);
 }
+
 .login-btn:active, .signup-btn:active {
   color: var(--mainWhite);
 }
@@ -1337,8 +1340,51 @@ div.div-middle>div+div {
 
 div.div-middle>div.aside-nav {
   flex: 0 1 300px;
+  width: 20%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--mainWhite);
+  background: transparent;
+  min-height: 500px;
+  padding: 7rem 2rem 7rem 2rem;
+}
+
+div.div-middle>div.aside-nav div.side-navigation {
+  flex: 0 1 300px;
   background-image: linear-gradient(246deg, #3b3f63, #2f3350);
-  min-height: 400px;
+  min-height: 250px;
+  padding-top: 4rem;
+  padding-bottom: 4remF;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+div.div-middle>div.aside-nav div.side-navigation>div.side-links-grp {
+  width: 100%;
+  text-align: center;
+}
+
+div.div-middle>div.aside-nav div.side-navigation>div.side-links-grp+div.side-links-grp {
+  margin-top: 1rem;
+}
+
+div.div-middle>div.aside-nav div.side-navigation>div.side-links-grp a {
+  color: var(--mainWhite);
+  font-weight: 500;
+  display: block;
+  padding: 1rem 0 1rem 0;
+  width: 100%;
+}
+
+div.div-middle>div.aside-nav div.side-navigation>div.side-links-grp a.active {
+  color: var(--mainWhite);
+  text-decoration: none;
+  background: linear-gradient(to right, #2f3350, #494d70 20% 80%, #2f3350 )
 }
 
 div.div-middle>div.main-content {
@@ -1455,9 +1501,11 @@ form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button {
   color: white;
   height: 3em;
 }
+
 form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:hover {
   color: var(--mainBlack);
 }
+
 form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:active {
   color: var(--mainWhite);
 }

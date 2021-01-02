@@ -1,16 +1,29 @@
 import React from 'react';
 import ProfileDetails from '../components/ProfileDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import SideNav from './../components/SideNav';
 
 
 
 export default function Profile({ location, user, history }) {
+    const links = [
+        {
+            name: 'Personal Information',
+            link: '/profile/details'
+        },
+        {
+            name: 'Change Password',
+            link: '/profile/change-password'
+        },
+        {
+            name: 'Report Stata',
+            link: '/profile/stats'
+        },
+    ];
     return (
         <main className="profile-main">
             <div className="div-middle">
-                <div className="aside-nav">
-                    <h2>Aside</h2>
-                </div>
+                <SideNav links={links} />
                 <div className="main-content" >
 
                     <div className="profile-header-div">
