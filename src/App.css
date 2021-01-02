@@ -114,6 +114,14 @@ a:hover {
 .btn-primary:hover {
   background-color: transparent;
 }
+.btn-primary:focus {
+  border: 2px solid var(--orange);
+  outline: none;
+}
+.btn-primary:active {
+  background: var(--orange);
+  outline: none;
+}
 
 /*Title*/
 
@@ -1301,6 +1309,9 @@ div.input-grp {
 .login-btn:hover, .signup-btn:hover {
   color: var(--mainBlack);
 }
+.login-btn:active, .signup-btn:active {
+  color: var(--mainWhite);
+}
 
 /****** Dashboard*******/
 
@@ -1349,7 +1360,7 @@ div.div-middle>div.main-content .profile-header-div h1 {
   font-size: 1.7em;
 }
 
-div.main-content>div.profile-details-div {
+form.form-content>div.profile-details-div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1357,7 +1368,7 @@ div.main-content>div.profile-details-div {
   margin-top: 4rem;
 }
 
-div.main-content>div.profile-details-div>div {
+form.form-content>div.profile-details-div>div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1366,7 +1377,7 @@ div.main-content>div.profile-details-div>div {
   width: 100%;
 }
 
-div.main-content>div.profile-details-div>div+div {
+form.form-content>div.profile-details-div>div+div {
   margin-top: 4rem;
 }
 
@@ -1376,32 +1387,35 @@ div.profile-details-div>div label {
   font-weight: bold;
 }
 
-div.main-content .extra {
+form.form-content .extra {
   color: var(--darkGray);
-  
 }
 
-div.main-content>div.profile-details-div .label-button {
+form.form-content>div.profile-details-div .label-button {
   background: transparent;
   border: none;
   font-size: 0.9rem;
 }
-div.main-content>div.profile-details-div>div>div{
+
+form.form-content>div.profile-details-div>div>div {
   max-width: 170px;
   flex: 1 1 100px;
 }
-div.main-content>div.profile-details-div>div>div+div{
+
+form.form-content>div.profile-details-div>div>div+div {
   max-width: 170px;
 }
-div.main-content>div.profile-details-div .dp-div {
+
+form.form-content>div.profile-details-div .dp-div {
   max-width: 130px;
   flex: 1 1 100px;
 }
 
-div.main-content>div.profile-details-div .dp-div img {
+form.form-content>div.profile-details-div .dp-div img {
   width: 100%;
 }
-div.main-content>div.profile-details-div>div>div+div input{
+
+form.form-content>div.profile-details-div>div>div+div input {
   height: 3em;
   width: 100%;
   padding: 2px 2px;
@@ -1414,12 +1428,38 @@ div.main-content>div.profile-details-div>div>div+div input{
   pointer-events: none;
 }
 
-div.main-content>div.profile-details-div>div>div+div input:hover {
+form.form-content>div.profile-details-div>div>div+div input:hover {
   cursor: default;
 }
 
-div.main-content>div.profile-details-div>div>div+div input:focus {
+form.form-content>div.profile-details-div>div>div+div input:focus {
   outline: none;
+}
+
+form.form-content>div.profile-details-div>div.btn-top-div {
+  display: block;
+}
+
+form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div {
+  width: 100%;
+  display: block;
+  text-align: center;
+  max-width: 100%;
+}
+
+form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button {
+  min-width: 250px;
+  padding: 5px;
+  max-width: 70%;
+  margin: auto;
+  color: white;
+  height: 3em;
+}
+form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:hover {
+  color: var(--mainBlack);
+}
+form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:active {
+  color: var(--mainWhite);
 }
 
 /****** End of Dashboard*******/
