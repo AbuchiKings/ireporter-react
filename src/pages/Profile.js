@@ -2,6 +2,8 @@ import React from 'react';
 import ProfileDetails from '../components/ProfileDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import SideNav from './../components/SideNav';
+import ChangePassword from './../components/ChangePassword';
+import ReportStat from './../components/ReportStat';
 
 
 
@@ -57,6 +59,12 @@ export default function Profile({ location, user, history }) {
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
                             <ProfileDetails />
+                        )} />
+                        <Route exact path="/profile/change-password" render={() => (
+                            <ChangePassword />
+                        )} />
+                        <Route exact path="/profile/stats" render={() => (
+                            <ReportStat />
                         )} />
                         <Redirect from="/profile" to="/profile/details" />
                     </Switch>

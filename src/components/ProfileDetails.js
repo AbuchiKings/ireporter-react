@@ -5,6 +5,7 @@ export default function ProfileDetails() {
     return (
         <form action="" className="form-content" noValidate>
             <div className="profile-details-div">
+
                 <div>
                     <div className="details-label">
                         <h6>Profile picture</h6>
@@ -15,6 +16,7 @@ export default function ProfileDetails() {
                         <img src={boyImg} alt="" />
                     </div>
                 </div>
+
                 <div>
                     <div className="details-label">
                         <label htmlFor="firstname">Firstname</label>
@@ -26,6 +28,7 @@ export default function ProfileDetails() {
                         <input type="text" name="firstname" value="Abuchi" className="profile-input" />
                     </div>
                 </div>
+
                 <div>
                     <div className="details-label">
                         <label htmlFor="lastname">Lastname</label>
@@ -37,6 +40,7 @@ export default function ProfileDetails() {
                         <input type="text" name="lastname" id="lastname" value="Ndinigwe" />
                     </div>
                 </div>
+
                 <div>
                     <div className="details-label">
                         <label htmlFor="email">Email</label>
@@ -50,6 +54,7 @@ export default function ProfileDetails() {
                         />
                     </div>
                 </div>
+
                 <div>
                     <div className="details-label">
                         <label htmlFor="phone-number">Phone number</label>
@@ -60,6 +65,7 @@ export default function ProfileDetails() {
                         <input type="text" aria-label="phone-number" name="phone_number" id="phone-number" value="+2348062158380" />
                     </div>
                 </div>
+                
                 <div className="btn-top-div">
                     <div className="details btn-div">
                         <button type="submit" className="btn btn-primary profile-edit-btn">Edit</button>

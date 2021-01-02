@@ -1316,7 +1316,7 @@ div.input-grp {
   color: var(--mainWhite);
 }
 
-/****** Dashboard*******/
+/****** Profile**************************************/
 
 main.profile-main {
   min-height: 100vh;
@@ -1389,7 +1389,15 @@ div.aside-nav div.side-navigation>div.side-links-grp a.active {
   background: linear-gradient(to right, #2f3350, #494d70 20% 80%, #2f3350)
 }
 
+div.aside-nav div.side-navigation>div.side-links-grp a:hover {
+  color: var(--mainWhite);
+  text-decoration: none;
+  background: #1e2137;
+}
+
 /**end of SideNav***/
+
+/**profile details && change password**/
 
 div.div-middle>div.main-content {
   background: var(--mainWhite);
@@ -1410,7 +1418,7 @@ div.div-middle>div.main-content .profile-header-div h1 {
   font-size: 1.7em;
 }
 
-form.form-content>div.profile-details-div {
+form.form-content>div.profile-details-div, form.form-content>div.change-password-top {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1418,7 +1426,7 @@ form.form-content>div.profile-details-div {
   margin-top: 4rem;
 }
 
-form.form-content>div.profile-details-div>div {
+form.form-content>div.profile-details-div>div, form.form-content>div.change-password-top>div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1427,11 +1435,11 @@ form.form-content>div.profile-details-div>div {
   width: 100%;
 }
 
-form.form-content>div.profile-details-div>div+div {
-  margin-top: 4rem;
+form.form-content>div.profile-details-div>div+div, form.form-content>div.change-password-top>div+div {
+  margin-top: 3rem;
 }
 
-div.profile-details-div>div label {
+div.profile-details-div>div label, div.change-password-top>div label {
   display: block;
   font-size: 1em;
   font-weight: bold;
@@ -1441,18 +1449,18 @@ form.form-content .extra {
   color: var(--darkGray);
 }
 
-form.form-content>div.profile-details-div .label-button {
+form.form-content .label-button {
   background: transparent;
   border: none;
   font-size: 0.9rem;
 }
 
-form.form-content>div.profile-details-div>div>div {
+form.form-content>div.profile-details-div>div>div, form.form-content>div.change-password-top>div>div {
   max-width: 170px;
   flex: 1 1 100px;
 }
 
-form.form-content>div.profile-details-div>div>div+div {
+form.form-content>div.profile-details-div>div>div+div, form.form-content>div.change-password-top>div>div+div {
   max-width: 170px;
 }
 
@@ -1486,18 +1494,18 @@ form.form-content>div.profile-details-div>div>div+div input:focus {
   outline: none;
 }
 
-form.form-content>div.profile-details-div>div.btn-top-div {
+form.form-content div.btn-top-div {
   display: block;
 }
 
-form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div {
+form.form-content div.btn-top-div>div.btn-div {
   width: 100%;
   display: block;
   text-align: center;
   max-width: 100%;
 }
 
-form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button {
+form.form-content div.btn-top-div>div.btn-div button {
   min-width: 250px;
   padding: 5px;
   max-width: 70%;
@@ -1506,15 +1514,49 @@ form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button {
   height: 3em;
 }
 
-form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:hover {
+form.form-content div.btn-top-div>div.btn-div button:hover {
   color: var(--mainBlack);
 }
 
-form.form-content>div.profile-details-div>div.btn-top-div>div.btn-div button:active {
+form.form-content div.btn-top-div>div.btn-div button:active {
   color: var(--mainWhite);
 }
 
-/****** End of Dashboard*******/
+
+form.form-content input.active-input {
+  height: 3em;
+  width: 100%;
+  padding: 2px 2px;
+  padding-bottom: 2px;
+  position: relative;
+  font-size: 0.9rem;
+  background: none !important;
+  border: none;
+  color: var(--darkGray);
+  padding: 2px 5px;
+  padding-bottom: 2px;
+  position: relative;
+  border-bottom: 1px solid rgb( 234, 234, 234);
+  transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -webkit-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -moz-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -ms-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+  -o-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
+}
+
+form.form-content input.active-input:hover {
+  border-bottom-color: rgb(200, 200, 200);
+}
+
+form.form-content input.active-input:focus {
+  outline: none;
+  box-shadow: rgb(55, 142, 240) 0px 1px 0px;
+  border-color: rgb(55, 142, 240);
+}
+
+/**end of profile details && change password**/
+
+/****** End of Profile****************************************/
 
 /* Footer**/
 
