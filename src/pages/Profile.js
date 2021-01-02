@@ -16,10 +16,12 @@ export default function Profile({ location, user, history }) {
             link: '/profile/change-password'
         },
         {
-            name: 'Report Stata',
+            name: 'Report Statistics',
             link: '/profile/stats'
         },
     ];
+    const { pathname } = location;
+
     return (
         <main className="profile-main">
             <div className="div-middle">
@@ -27,8 +29,30 @@ export default function Profile({ location, user, history }) {
                 <div className="main-content" >
 
                     <div className="profile-header-div">
-                        <h1>Personal Information</h1>
-                        <p className="extra">Update your profile information.</p>
+                        {(() => {
+                            if (pathname === "/profile/details") {
+                                return (
+                                    <>
+                                        <h1>Personal Information</h1>
+                                        <p className="extra">Update your profile information.</p>
+                                    </>
+                                )
+                            } else if (pathname === "/profile/change-password") {
+                                return (
+                                    <>
+                                        <h1>Change Password</h1>
+                                        <p className="extra">Update your password.</p>
+                                    </>
+                                )
+                            } else if (pathname === "/profile/stats") {
+                                return (
+                                    <>
+                                        <h1>Report Statistics</h1>
+                                    </>
+                                )
+                            }
+                        })()}
+
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (

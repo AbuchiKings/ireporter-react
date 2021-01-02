@@ -8,8 +8,8 @@ export default function SideNav({ links }) {
 
                 {links.map(link => {
                     return (
-                        <div className="side-links-grp">
-                            <NavLink to={link.link} activeClassName="active" exact>{link.name}</NavLink>
+                        <div key={link.name} className="side-links-grp">
+                            <NavLink  to={link.link} activeClassName="active" exact>{link.name}</NavLink>
                         </div>
                     )
                 })}
