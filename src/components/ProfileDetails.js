@@ -2,7 +2,7 @@ import React from 'react'
 import boyImg from '../images/boy-with-book.jpg'
 import TextInput from './TextInput';
 
-export default function ProfileDetails({ user, errors, onChange, }) {
+export default function ProfileDetails({ user, errors, onChange, handleToggle, buttonText }) {
     return (
         <form action="" className="form-content" noValidate>
             <div className="profile-details-div">
@@ -32,7 +32,7 @@ export default function ProfileDetails({ user, errors, onChange, }) {
 
                 <div className="btn-top-div">
                     <div className="details btn-div">
-                        <button type="submit" className="btn btn-primary profile-edit-btn">Edit</button>
+                        <button type="submit" className="btn btn-primary profile-edit-btn" onClick={handleToggle}>{buttonText}</button>
                     </div>
                 </div>
             </div>
