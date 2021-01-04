@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProfileDetails from '../components/ProfileDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import SideNav from './../components/SideNav';
 import ChangePassword from './../components/ChangePassword';
 import ReportStat from './../components/ReportStat';
+import { connect } from 'react-redux';
 
 
 
-export default function Profile({ location, user, history }) {
+function Profile({ location, user, history }) {
     const links = [
         {
             name: 'Personal Information',
@@ -23,6 +24,16 @@ export default function Profile({ location, user, history }) {
         },
     ];
     const { pathname } = location;
+    const [userDetails, setDetails] = useState({ ...user });
+    const [errors, setErrors] = useState({});
+
+    function handleChange(event) {
+        const { name, value } = event;
+        setDetails(prev => ({
+            ...prev,
+            [name]: value
+        }))
+    }
 
     return (
         <main className="profile-main">
@@ -58,7 +69,7 @@ export default function Profile({ location, user, history }) {
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
-                            <ProfileDetails />
+                            <ProfileDetails user={userDetails} errors={errors} onChange={handleChange} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
                             <ChangePassword />
@@ -81,3 +92,5 @@ const mapStateToProps = (state) => {
         user: state.user
     };
 }
+
+export default connect(mapStateToProps)(Profile)

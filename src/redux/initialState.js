@@ -5,7 +5,7 @@ const state = {
         email: undefined,
         is_admin: false,
         firstname: undefined,
-        lasname: undefined,
+        lastname: undefined,
         phone_number: undefined,
         image: undefined,
         image_id: undefined,

@@ -1,14 +1,15 @@
 import React from 'react'
 import boyImg from '../images/boy-with-book.jpg'
+import TextInput from './TextInput';
 
-export default function ProfileDetails() {
+export default function ProfileDetails({ user, errors, onChange, }) {
     return (
         <form action="" className="form-content" noValidate>
             <div className="profile-details-div">
 
                 <div>
                     <div className="details-label">
-                        <h6>Profile picture</h6>
+                        <label>Profile picture</label>
                         <button className="extra label-button"> Choose a new profile picture</button>
                     </div>
 
@@ -17,55 +18,18 @@ export default function ProfileDetails() {
                     </div>
                 </div>
 
-                <div>
-                    <div className="details-label">
-                        <label htmlFor="firstname">Firstname</label>
-                        <button className="extra label-button">Change first name</button>
+                <TextInput name="firstname" label="Firstname" value={user.firstname}
+                    type="text" error={errors.firstname} text="Change first name" onChange={onChange} />
 
-                    </div>
+                <TextInput name="lastname" label="Lastname" value={user.lastname}
+                    type="text" error={errors.lastname} text="Change last name" onChange={onChange} />
 
-                    <div className="details">
-                        <input type="text" name="firstname" value="Abuchi" className="profile-input" />
-                    </div>
-                </div>
+                <TextInput name="email" label="Email" value={user.email}
+                    type="email" error={errors.email} text="Change email address" onChange={onChange} />
 
-                <div>
-                    <div className="details-label">
-                        <label htmlFor="lastname">Lastname</label>
-                        <button className="extra label-button">Change last name</button>
+                <TextInput name="phone_number" label="Phone number" value={user.phone_number}
+                    type="text" error={errors.phone_number} text="Change phone number" onChange={onChange} />
 
-                    </div>
-
-                    <div className="details">
-                        <input type="text" name="lastname" id="lastname" value="Ndinigwe" />
-                    </div>
-                </div>
-
-                <div>
-                    <div className="details-label">
-                        <label htmlFor="email">Email</label>
-                        <button className="extra label-button">Change email address</button>
-
-                    </div>
-
-                    <div className="details">
-                        <input type="email"
-                            aria-label="email" name="email" id="email" value="abuchikingsley76@gmail.com"
-                        />
-                    </div>
-                </div>
-
-                <div>
-                    <div className="details-label">
-                        <label htmlFor="phone-number">Phone number</label>
-                        <button className="extra label-button"> Change phone number</button>
-                    </div>
-
-                    <div className="details">
-                        <input type="text" aria-label="phone-number" name="phone_number" id="phone-number" value="+2348062158380" />
-                    </div>
-                </div>
-                
                 <div className="btn-top-div">
                     <div className="details btn-div">
                         <button type="submit" className="btn btn-primary profile-edit-btn">Edit</button>

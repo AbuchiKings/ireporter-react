@@ -1346,19 +1346,28 @@ div.aside-nav {
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background: var(--mainWhite);
+  justify-content: center;
   background: transparent;
   min-height: 500px;
   padding: 7rem 2rem 7rem 2rem;
 }
 
+
+div.aside-nav div.side-navigation, div.aside-nav>div.support {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
 div.aside-nav div.side-navigation {
   flex: 0 1 300px;
   background-image: linear-gradient(246deg, #3b3f63, #2f3350);
   min-height: 250px;
   padding-top: 4rem;
-  padding-bottom: 4remF;
+  padding-bottom: 4rem;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1393,6 +1402,16 @@ div.aside-nav div.side-navigation>div.side-links-grp a:hover {
   color: var(--mainWhite);
   text-decoration: none;
   background: #1e2137;
+}
+
+div.aside-nav>div+div {
+  margin-top: 4rem;
+}
+div.aside-nav>div.support {
+  margin-top: 4rem;
+  background: var(--mainWhite);
+  min-height: 200px;
+
 }
 
 /**end of SideNav***/

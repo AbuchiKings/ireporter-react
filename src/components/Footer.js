@@ -48,7 +48,7 @@ function Footer() {
 
             </div>
             <small>
-                Copyright &copy; 2020 All rights reserved | Made by
+                Copyright &copy; {`${new Date().getFullYear()}`} All rights reserved | Made by
                 <span><a href="https://github.com/Abuchikings" target="_blank" rel="noopener noreferrer">  Abuchi Kingsley</a></span>
             </small>
 
