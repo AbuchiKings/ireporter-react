@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextInput = ({ name, label, onChange, value, type, text, error }) => {
+const TextInput = ({ name, label, onChange, value, type, text, error, inputClass }) => {
     let wrapperClass = "form-group";
     if (error && error.length > 0) {
         wrapperClass += " " + "has-error";
@@ -15,7 +15,7 @@ const TextInput = ({ name, label, onChange, value, type, text, error }) => {
             </div>
 
             <div className="details">
-                <input aria-label={name} type={type} name={name} value={value} className="profile-input" onChange={onChange} />
+                <input aria-label={name} type={type} name={name} value={value} className={inputClass} onChange={onChange}  />
                 {error && <div className="alert alert-danger">{error}</div>}
             </div>
         </div>

@@ -1542,9 +1542,11 @@ form.form-content div.btn-top-div>div.btn-div button:active {
 }
 
 
+form.form-content>div.profile-details-div>div>div+div input.active-input,
 form.form-content input.active-input {
   height: 3em;
   width: 100%;
+  pointer-events: unset;
   padding: 2px 2px;
   padding-bottom: 2px;
   position: relative;
@@ -1562,11 +1564,16 @@ form.form-content input.active-input {
   -ms-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
   -o-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
 }
+form.form-content>div.profile-details-div>div>div+div input.active-input:hover {
+  cursor: auto;
+}
 
+form.form-content>div.profile-details-div>div>div+div input.active-input:hover,
 form.form-content input.active-input:hover {
   border-bottom-color: rgb(200, 200, 200);
 }
 
+form.form-content>div.profile-details-div>div>div+div input.active-input:focus,
 form.form-content input.active-input:focus {
   outline: none;
   box-shadow: rgb(55, 142, 240) 0px 1px 0px;

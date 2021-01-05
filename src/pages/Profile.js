@@ -27,11 +27,15 @@ function Profile({ location, user, history }) {
     const [userDetails, setDetails] = useState({ ...user });
     const [errors, setErrors] = useState({});
     const [buttonText, setButtonText] = useState("Edit");
+    const [inputClass, setInputClass] = useState("");
 
     const handleToggle = (e) => {
         e.preventDefault();
         console.log(e.target.disabled);
-        if (e.target.textContent === "Edit") setButtonText("Save");
+        if (e.target.textContent === "Edit") {
+            setButtonText("Save")
+            setInputClass("active-input")
+        }
 
         else if (e.target.textContent === "Save") {
             setButtonText("Saving...");
@@ -86,7 +90,7 @@ function Profile({ location, user, history }) {
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
                             <ProfileDetails user={userDetails} errors={errors} onChange={handleChange}
-                             handleToggle={handleToggle} buttonText={buttonText} />
+                                handleToggle={handleToggle} buttonText={buttonText} inputClass={inputClass} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
                             <ChangePassword />
