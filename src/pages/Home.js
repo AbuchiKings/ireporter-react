@@ -87,7 +87,7 @@ const Home = () => {
                             <div className="flex-div">
                                 {causes.map((c, idx) => {
                                     return (
-                                        <div className="img-div" key={idx + 1} data-aos="fade-up" data-aos-offset="100" data-aos-duration="1500" data-aos-mirror="true">
+                                        <div className="img-div" key={idx + 1} data-aos="fade-up" data-aos-offset="50" data-aos-duration="1500" data-aos-mirror="true">
                                             <div className="txt-div" ><span>{c.text}</span></div>
                                             <img src={c.img} alt={c.text} />
                                         </div>

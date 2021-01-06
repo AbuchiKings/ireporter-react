@@ -1,10 +1,10 @@
 import * as actionTypes from './actionTypes'
 import request from '../../util/request'
 
-export function createUser(userData) {
+ function createUser(userData) {
     return { type: actionTypes.CREATE_USER_SUCCESS, user: { ...userData.data, message: userData.message } }
 }
-export function loginUser(userData) {
+ function loginUser(userData) {
     console.log(userData)
 
     return {

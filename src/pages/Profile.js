@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfileDetails from '../components/ProfileDetails';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import SideNav from './../components/SideNav';
 import ChangePassword from './../components/ChangePassword';
 import ReportStat from './../components/ReportStat';
 import { connect } from 'react-redux';
+import * as userActions from '../redux/actions/userActions';
+import { bindActionCreators } from 'redux';
 
 
-
-function Profile({ location, user, history }) {
+function Profile({ location, actions,...props }) {
+    const { loadUser } = actions;
+    const [user, setUser] = useState({ ...props.user });
+    useEffect(() => {
+        console.log('worked')
+        if ( user.registered === undefined) {
+            loadUser().catch(error => console.log(error));
+            setUser((prev => (
+                { ...prev, ...props.user }
+            )));
+        }
+    }, [props.user, user.registered, loadUser])
     const links = [
         {
             name: 'Personal Information',
@@ -24,32 +36,28 @@ function Profile({ location, user, history }) {
         },
     ];
     const { pathname } = location;
-    const [userDetails, setDetails] = useState({ ...user });
     const [errors, setErrors] = useState({});
-    const [buttonText, setButtonText] = useState("Edit");
+    const [buttonText, setButtonText] = useState({value: "Edit", saving:false});
     const [inputClass, setInputClass] = useState("");
 
     const handleToggle = (e) => {
         e.preventDefault();
         console.log(e.target.disabled);
         if (e.target.textContent === "Edit") {
-            setButtonText("Save")
+            setButtonText({value: "Save"})
             setInputClass("active-input")
         }
 
         else if (e.target.textContent === "Save") {
-            setButtonText("Saving...");
-            e.target.disabled = true;
+            setButtonText({value:"Saving...", saving: true});
+            setInputClass(" ")
 
-        } else {
-
-        }
-
+        } else { }
     }
 
     function handleChange(event) {
-        const { name, value } = event;
-        setDetails(prev => ({
+        const { name, value } = event.target;
+        setUser(prev => ({
             ...prev,
             [name]: value
         }))
@@ -89,8 +97,8 @@ function Profile({ location, user, history }) {
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
-                            <ProfileDetails user={userDetails} errors={errors} onChange={handleChange}
-                                handleToggle={handleToggle} buttonText={buttonText} inputClass={inputClass} />
+                            user?.firstname?.length > 1 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
+                                handleToggle={handleToggle} buttonText={buttonText.value} inputClass={inputClass} disabled={buttonText.saving} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
                             <ChangePassword />
@@ -114,4 +122,11 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(Profile)
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(userActions, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)
