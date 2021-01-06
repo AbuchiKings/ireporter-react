@@ -1,5 +1,5 @@
 const state = {
-    //isLoading: false,
+    isLoading: 0,
     user: {
         id: '',
         email: '',

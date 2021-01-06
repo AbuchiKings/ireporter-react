@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import Spinner from './../components/spinner/Spinner';
 
 
-function Profile({ location, actions, ...props }) {
+function Profile({ location, actions, loading, ...props }) {
     const { loadUser, updateUser } = actions;
     const [user, setUser] = useState({ ...props.user });
     useEffect(() => {
@@ -20,6 +20,8 @@ function Profile({ location, actions, ...props }) {
             setUser((prev => (
                 { ...prev, ...props.user }
             )));
+        } else {
+            setUser({ ...props.user });
         }
     }, [props.user, user.registered, loadUser])
     const links = [
@@ -102,7 +104,7 @@ function Profile({ location, actions, ...props }) {
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
-                            props.user?.firstname?.length > 1 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
+                            props.user?.firstname?.length > 0 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
                                 handleSubmit={handleSubmit} buttonText={buttonText.value} inputClass={inputClass} disabled={buttonText.saving} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
@@ -116,7 +118,6 @@ function Profile({ location, actions, ...props }) {
                 </div>
 
             </div>
-            <Spinner />
         </main>
     )
 }
@@ -124,7 +125,8 @@ function Profile({ location, actions, ...props }) {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.user
+        user: state.user,
+        loading: state.isLoading >0
     };
 }
 
