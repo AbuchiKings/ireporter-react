@@ -104,7 +104,7 @@ function Profile({ location, actions, loading, ...props }) {
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
-                            props.user?.firstname?.length > 0 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
+                            props.user?.firstname?.length < 1 ? <Spinner /> : <ProfileDetails user={user} errors={errors} onChange={handleChange}
                                 handleSubmit={handleSubmit} buttonText={buttonText.value} inputClass={inputClass} disabled={buttonText.saving} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
@@ -126,7 +126,7 @@ function Profile({ location, actions, loading, ...props }) {
 const mapStateToProps = (state) => {
     return {
         user: state.user,
-        loading: state.isLoading >0
+        loading: state.isLoading > 0
     };
 }
 
