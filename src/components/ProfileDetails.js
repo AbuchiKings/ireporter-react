@@ -2,9 +2,9 @@ import React from 'react'
 import boyImg from '../images/boy-with-book.jpg'
 import TextInput from './TextInput';
 
-export default function ProfileDetails({ user, errors, onChange, handleToggle, buttonText, inputClass, disabled }) {
+export default function ProfileDetails({ user, errors, onChange, handleSubmit, buttonText, inputClass, disabled }) {
     return (
-        <form action="" className="form-content" noValidate>
+        <form action="" className="form-content" noValidate onSubmit = {handleSubmit}>
             <div className="profile-details-div">
 
                 <div>
@@ -33,7 +33,7 @@ export default function ProfileDetails({ user, errors, onChange, handleToggle, b
                 <div className="btn-top-div">
                     <div className="details btn-div">
                         <button type="submit" className="btn btn-primary profile-edit-btn"
-                            onClick={handleToggle} disabled={disabled}>{buttonText}</button>
+                            onClick={handleSubmit} disabled={disabled}>{buttonText}</button>
                     </div>
                 </div>
             </div>

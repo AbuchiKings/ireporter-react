@@ -7,14 +7,15 @@ import ReportStat from './../components/ReportStat';
 import { connect } from 'react-redux';
 import * as userActions from '../redux/actions/userActions';
 import { bindActionCreators } from 'redux';
+import Spinner from './../components/spinner/Spinner';
 
 
-function Profile({ location, actions,...props }) {
-    const { loadUser } = actions;
+function Profile({ location, actions, ...props }) {
+    const { loadUser, updateUser } = actions;
     const [user, setUser] = useState({ ...props.user });
     useEffect(() => {
         console.log('worked')
-        if ( user.registered === undefined) {
+        if (user.registered === undefined) {
             loadUser().catch(error => console.log(error));
             setUser((prev => (
                 { ...prev, ...props.user }
@@ -37,22 +38,26 @@ function Profile({ location, actions,...props }) {
     ];
     const { pathname } = location;
     const [errors, setErrors] = useState({});
-    const [buttonText, setButtonText] = useState({value: "Edit", saving:false});
+    const [buttonText, setButtonText] = useState({ value: "Edit", saving: false });
     const [inputClass, setInputClass] = useState("");
 
-    const handleToggle = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log(e.target.disabled);
         if (e.target.textContent === "Edit") {
-            setButtonText({value: "Save"})
+            setButtonText({ value: "Save" })
             setInputClass("active-input")
         }
 
         else if (e.target.textContent === "Save") {
-            setButtonText({value:"Saving...", saving: true});
-            setInputClass(" ")
-
-        } else { }
+            setButtonText({ value: "Saving...", saving: true });
+            setInputClass(" ");
+            updateUser(user).catch(error => console.log(error));
+        } else {
+            setButtonText({ value: "Saving...", saving: true });
+            setInputClass(" ");
+            updateUser(user).catch(error => console.log(error));
+        }
     }
 
     function handleChange(event) {
@@ -97,8 +102,8 @@ function Profile({ location, actions,...props }) {
                     </div>
                     <Switch>
                         <Route exact path="/profile/details" render={() => (
-                            user?.firstname?.length > 1 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
-                                handleToggle={handleToggle} buttonText={buttonText.value} inputClass={inputClass} disabled={buttonText.saving} />
+                            props.user?.firstname?.length > 1 && <ProfileDetails user={user} errors={errors} onChange={handleChange}
+                                handleSubmit={handleSubmit} buttonText={buttonText.value} inputClass={inputClass} disabled={buttonText.saving} />
                         )} />
                         <Route exact path="/profile/change-password" render={() => (
                             <ChangePassword />
@@ -111,6 +116,7 @@ function Profile({ location, actions,...props }) {
                 </div>
 
             </div>
+            <Spinner />
         </main>
     )
 }

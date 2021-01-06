@@ -1540,7 +1540,10 @@ form.form-content div.btn-top-div>div.btn-div button:hover {
 form.form-content div.btn-top-div>div.btn-div button:active {
   color: var(--mainWhite);
 }
-
+form.form-content div.btn-top-div>div.btn-div button:disabled:hover {
+  color: var(--mainWhite);
+  background-color: var(--orange);
+}
 
 form.form-content>div.profile-details-div>div>div+div input.active-input,
 form.form-content input.active-input {
