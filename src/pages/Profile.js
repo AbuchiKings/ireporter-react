@@ -54,11 +54,15 @@ function Profile({ location, actions, loading, ...props }) {
         else if (e.target.textContent === "Save") {
             setButtonText({ value: "Saving...", saving: true });
             setInputClass(" ");
-            updateUser(user).catch(error => console.log(error));
+            updateUser(user)
+                .then(() => {
+                    setButtonText({ value: "Edit", saving: false })
+                })
+                .catch(error => console.log(error));
         } else {
-            setButtonText({ value: "Saving...", saving: true });
-            setInputClass(" ");
-            updateUser(user).catch(error => console.log(error));
+            // setButtonText({ value: "Saving...", saving: false });
+            // setInputClass(" ");
+            // updateUser(user).catch(error => console.log(error));
         }
     }
 
