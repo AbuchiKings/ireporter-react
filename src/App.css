@@ -1618,6 +1618,7 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
     position: absolute;
     left: -300px;
     background-color: var(--lightBlue);
+    padding: 2rem;
     z-index: 2;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -1625,12 +1626,16 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
 }
-  div.aside-nav.closed {
+  div.aside-nav.open {
     left: 0;
   }
   div.div-middle>div+div {
     margin-left: 0;
     max-width: 450px;
+  }
+  div.div-middle>div.main-content {
+    max-width: 300px;
+    padding: 4rem 1rem 4rem 1rem;
   }
   .sideNav-toggle {
     display: block;

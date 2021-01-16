@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function SideNav({ links, sideNav }) {
     return (
-        <div className={sideNav ? "aside-nav closed" : "aside-nav"}>
+        <div className={sideNav ? "aside-nav open" : "aside-nav"}>
             <div className="side-navigation">
 
                 {links.map(link => {
