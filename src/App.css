@@ -1349,7 +1349,6 @@ div.aside-nav {
   flex-direction: column;
   justify-content: center;
   background: transparent;
-  min-height: 500px;
   padding: 7rem 2rem 7rem 2rem;
   transition: var(--mainTransition);
   -webkit-transition: var(--mainTransition);
@@ -1422,7 +1421,7 @@ div.aside-nav>div.support {
 
 .sideNav-toggle {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 4.2rem;
   z-index: 2;
   font-size: 2rem;
@@ -1615,10 +1614,10 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
 
 @media(max-width: 720px) {
   div.aside-nav {
-    position: absolute;
+    position: fixed;
     left: -300px;
     background-color: var(--lightBlue);
-    padding: 2rem;
+    padding: 4rem 1.5rem 4rem 1.5rem;
     z-index: 2;
     border-radius: 4px;
     -webkit-border-radius: 4px;
