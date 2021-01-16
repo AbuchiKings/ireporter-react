@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import * as userActions from '../redux/actions/userActions';
 import { bindActionCreators } from 'redux';
 import Spinner from './../components/spinner/Spinner';
+import { FaAlignLeft } from 'react-icons/fa';
 
 
 function Profile({ location, actions, loading, ...props }) {
@@ -42,6 +43,7 @@ function Profile({ location, actions, loading, ...props }) {
     const [errors, setErrors] = useState({});
     const [buttonText, setButtonText] = useState({ value: "Edit", saving: false });
     const [inputClass, setInputClass] = useState("");
+    const [sideNav, setSideNav] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -74,12 +76,16 @@ function Profile({ location, actions, loading, ...props }) {
         }))
     }
 
+    function handleToggle() {
+        setSideNav(!sideNav);
+    }
+
     return (
         <main className="profile-main">
+            <FaAlignLeft className="sideNav-toggle" onClick={handleToggle} />
             <div className="div-middle">
-                <SideNav links={links} />
+                <SideNav links={links} sideNav={sideNav} />
                 <div className="main-content" >
-
                     <div className="profile-header-div">
                         {(() => {
                             if (pathname === "/profile/details") {

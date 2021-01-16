@@ -1344,14 +1344,19 @@ div.aside-nav {
   flex: 0 1 300px;
   width: 20%;
   max-width: 300px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: transparent;
   min-height: 500px;
   padding: 7rem 2rem 7rem 2rem;
+  transition: var(--mainTransition);
+  -webkit-transition: var(--mainTransition);
+  -moz-transition: var(--mainTransition);
+  -ms-transition: var(--mainTransition);
+  -o-transition: var(--mainTransition);
 }
-
 
 div.aside-nav div.side-navigation, div.aside-nav>div.support {
   padding-top: 4rem;
@@ -1362,6 +1367,7 @@ div.aside-nav div.side-navigation, div.aside-nav>div.support {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
 div.aside-nav div.side-navigation {
   flex: 0 1 300px;
   background-image: linear-gradient(246deg, #3b3f63, #2f3350);
@@ -1407,11 +1413,22 @@ div.aside-nav div.side-navigation>div.side-links-grp a:hover {
 div.aside-nav>div+div {
   margin-top: 4rem;
 }
+
 div.aside-nav>div.support {
   margin-top: 4rem;
   background: var(--mainWhite);
   min-height: 200px;
+}
 
+.sideNav-toggle {
+  display: none;
+  position: absolute;
+  top: 4.2rem;
+  z-index: 2;
+  font-size: 2rem;
+  color: red;
+  left: 1rem;
+  cursor: pointer;
 }
 
 /**end of SideNav***/
@@ -1540,13 +1557,13 @@ form.form-content div.btn-top-div>div.btn-div button:hover {
 form.form-content div.btn-top-div>div.btn-div button:active {
   color: var(--mainWhite);
 }
+
 form.form-content div.btn-top-div>div.btn-div button:disabled:hover {
   color: var(--mainWhite);
   background-color: var(--orange);
 }
 
-form.form-content>div.profile-details-div>div>div+div input.active-input,
-form.form-content input.active-input {
+form.form-content>div.profile-details-div>div>div+div input.active-input, form.form-content input.active-input {
   height: 3em;
   width: 100%;
   pointer-events: unset;
@@ -1567,23 +1584,61 @@ form.form-content input.active-input {
   -ms-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
   -o-transition: border-color 0.23s ease-in-out 0s, box-shadow 0.23s ease-in-out 0s;
 }
+
 form.form-content>div.profile-details-div>div>div+div input.active-input:hover {
   cursor: auto;
 }
 
-form.form-content>div.profile-details-div>div>div+div input.active-input:hover,
-form.form-content input.active-input:hover {
+form.form-content>div.profile-details-div>div>div+div input.active-input:hover, form.form-content input.active-input:hover {
   border-bottom-color: rgb(200, 200, 200);
 }
 
-form.form-content>div.profile-details-div>div>div+div input.active-input:focus,
-form.form-content input.active-input:focus {
+form.form-content>div.profile-details-div>div>div+div input.active-input:focus, form.form-content input.active-input:focus {
   outline: none;
   box-shadow: rgb(55, 142, 240) 0px 1px 0px;
   border-color: rgb(55, 142, 240);
 }
 
 /**end of profile details && change password**/
+
+@media(max-width: 868px) {
+  div.div-middle>div.main-content {
+    padding: 2rem 2rem 2rem 2rem
+  }
+  div.div-middle>div+div {
+    margin-left: 2rem;
+  }
+  div.aside-nav {
+    padding: 7rem 1.5rem 7rem 1.5rem;
+  }
+}
+
+@media(max-width: 720px) {
+  div.aside-nav {
+    position: absolute;
+    left: -300px;
+    background-color: var(--lightBlue);
+    z-index: 2;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+  div.aside-nav.closed {
+    left: 0;
+  }
+  div.div-middle>div+div {
+    margin-left: 0;
+    max-width: 450px;
+  }
+  .sideNav-toggle {
+    display: block;
+  }
+  div.aside-nav>div.support {
+    display: none;
+  }
+}
 
 /****** End of Profile****************************************/
 
