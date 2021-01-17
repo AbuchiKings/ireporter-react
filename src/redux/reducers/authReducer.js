@@ -15,8 +15,9 @@ export default function authReducer(state = initialState.user, action) {
         case actionTypes.LOGIN_SUCCESS:
             localStorage.setItem('token', action.user.token);
             localStorage.setItem('id', action.user.id);
+            const expAt = JSON.stringify((11 * 60 * 60 * 1000) + new Date().getTime());
+            localStorage.setItem('expAt', expAt);
             return { ...state, ...action.user };
-
         default:
             return state;
     }

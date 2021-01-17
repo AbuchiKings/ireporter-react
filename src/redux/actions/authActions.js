@@ -1,10 +1,10 @@
 import * as actionTypes from './actionTypes'
 import request from '../../util/request'
 
- function createUser(userData) {
+function createUser(userData) {
     return { type: actionTypes.CREATE_USER_SUCCESS, user: { ...userData.data, message: userData.message } }
 }
- function loginUser(userData) {
+function loginUser(userData) {
     console.log(userData)
 
     return {
@@ -24,7 +24,7 @@ export function createUserSuccess(userData) {
 export function loginSuccess(userData) {
     return function (dispatch) {
         return request({ verb: 'post', route: '/auth/login', payload: userData })
-            .then(response => dispatch(loginUser(response.data)))
+            .then(response => response.data ? dispatch(loginUser(response.data)) : {})
             .catch(error => { throw (error.response.data) });
     }
 }

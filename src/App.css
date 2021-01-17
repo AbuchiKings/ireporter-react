@@ -1624,7 +1624,7 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-}
+  }
   div.aside-nav.open {
     left: 0;
   }
@@ -1633,7 +1633,6 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
     max-width: 450px;
   }
   div.div-middle>div.main-content {
-    max-width: 300px;
     padding: 4rem 1rem 4rem 1rem;
   }
   .sideNav-toggle {
@@ -1641,6 +1640,12 @@ form.form-content>div.profile-details-div>div>div+div input.active-input:focus, 
   }
   div.aside-nav>div.support {
     display: none;
+  }
+}
+
+@media(max-width: 400px) {
+  div.div-middle>div.main-content {
+    max-width: 300px;
   }
 }
 
