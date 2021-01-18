@@ -15,7 +15,7 @@ function App(props) {
   const { pathname } = props.location;
   const auth = new Auth(props.history);
   const paths = pathname.split('/')
-  const otherpages = !paths.includes('auth') && <Navbar pathname={pathname} />;
+  const otherpages = !paths.includes('auth') && <Navbar pathname={pathname} auth={auth} />;
   const footer = !paths.includes('auth') && <Footer />;
   useEffect(() => {
     AOS.init();
@@ -26,7 +26,7 @@ function App(props) {
       {otherpages}
       <Switch>
         <Route path="/auth" component={AuthPage} />
-        <Route path="/profile" render={() => auth.isAuthenticated() ? <Profile /> : <Redirect to="/auth/login" />} />
+        <Route path="/profile" render={(props) => auth.isAuthenticated() ? <Profile {...props} /> : <Redirect to="/auth/login" />} />
         <Route path="/" component={Home} />
       </Switch>
       {footer}

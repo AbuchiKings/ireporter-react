@@ -248,7 +248,7 @@ div.nav-links-div ul, li.nav-links {
   list-style-type: none;
 }
 
-.nav-links a {
+.nav-links a, .nav-links button {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8125rem;
@@ -258,7 +258,7 @@ li.nav-links+li.nav-links {
   margin-left: 1.4em;
 }
 
-li.get-started a {
+li.get-started a, li.get-started button {
   border-radius: 0;
   background: var(--orange);
   color: #fff;
@@ -267,9 +267,13 @@ li.get-started a {
   padding: 10px 26.25px 10px;
 }
 
-li.get-started a:hover {
+li.get-started a:hover, li.get-started button:hover {
   text-decoration: none;
   opacity: 0.8;
+}
+
+li.get-started button {
+  border: none;
 }
 
 @media(max-width: 768px) {
@@ -300,7 +304,7 @@ li.get-started a:hover {
   li.nav-links+li.nav-links {
     margin: 1.4em 0;
   }
-  li.get-started a {
+  li.get-started a, li.get-started button {
     display: block;
     text-align: center;
   }

@@ -9,4 +9,4 @@ export default function configureState() {
         rootReducer,
         composeEnhancers(applyMiddleware(thunk))
     );
-}
+} 

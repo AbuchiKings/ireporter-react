@@ -10,13 +10,13 @@ const state = {
         image: '',
         image_id: '',
         username: '',
-        token: '',
-        isLoggedIn: false,
+        token: localStorage.getItem('token'),
+        isLoggedIn: new Date().getTime() < JSON.parse(localStorage.getItem('expAt')),
         authStatus: false,
         message: '',
         registered: undefined
     },
-   // incidents: [],
+    // incidents: [],
     // incident: {
     //     id: '',
     //     createdBy: '',
